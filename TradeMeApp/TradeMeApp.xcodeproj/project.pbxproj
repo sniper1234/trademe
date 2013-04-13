@@ -29,6 +29,12 @@
 		D2D775321718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
 		D2D7753A1718F42200ED68C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2D775381718F42200ED68C4 /* InfoPlist.strings */; };
 		D2D7753D1718F42200ED68C4 /* TradeMeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7753C1718F42200ED68C4 /* TradeMeAppTests.m */; };
+		D2D775681719055300ED68C4 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775611719043000ED68C4 /* libRestKit.a */; };
+		D2D77573171905C500ED68C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775711719059E00ED68C4 /* SystemConfiguration.framework */; };
+		D2D77574171905CC00ED68C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756F1719059600ED68C4 /* Security.framework */; };
+		D2D77575171905D700ED68C4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756D1719058D00ED68C4 /* MobileCoreServices.framework */; };
+		D2D77576171905E000ED68C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756B1719058400ED68C4 /* CoreData.framework */; };
+		D2D77577171905EC00ED68C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775691719056F00ED68C4 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +106,11 @@
 		D2D7753B1718F42200ED68C4 /* TradeMeAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeMeAppTests.h; sourceTree = "<group>"; };
 		D2D7753C1718F42200ED68C4 /* TradeMeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeMeAppTests.m; sourceTree = "<group>"; };
 		D2D775591719042F00ED68C4 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RestKit.xcodeproj; sourceTree = "<group>"; };
+		D2D775691719056F00ED68C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D2D7756B1719058400ED68C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D2D7756D1719058D00ED68C4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D2D7756F1719059600ED68C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D2D775711719059E00ED68C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +118,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D77577171905EC00ED68C4 /* CFNetwork.framework in Frameworks */,
+				D2D77576171905E000ED68C4 /* CoreData.framework in Frameworks */,
+				D2D77575171905D700ED68C4 /* MobileCoreServices.framework in Frameworks */,
+				D2D77574171905CC00ED68C4 /* Security.framework in Frameworks */,
+				D2D77573171905C500ED68C4 /* SystemConfiguration.framework in Frameworks */,
+				D2D775681719055300ED68C4 /* libRestKit.a in Frameworks */,
 				D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */,
 				D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */,
 				D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */,
@@ -149,6 +166,11 @@
 		D2D774FC1718F42200ED68C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2D775711719059E00ED68C4 /* SystemConfiguration.framework */,
+				D2D7756F1719059600ED68C4 /* Security.framework */,
+				D2D7756D1719058D00ED68C4 /* MobileCoreServices.framework */,
+				D2D7756B1719058400ED68C4 /* CoreData.framework */,
+				D2D775691719056F00ED68C4 /* CFNetwork.framework */,
 				D2D774FD1718F42200ED68C4 /* UIKit.framework */,
 				D2D774FF1718F42200ED68C4 /* Foundation.framework */,
 				D2D775011718F42200ED68C4 /* CoreGraphics.framework */,
@@ -512,7 +534,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -523,7 +550,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
