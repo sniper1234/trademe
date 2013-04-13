@@ -7,8 +7,13 @@
 //
 
 #import "TMFirstViewController.h"
+#import <RestKit/RestKit.h>
+#import "TMModels.h"
+#import "TMServices.h"
 
 @interface TMFirstViewController ()
+
+@property (strong, nonatomic) TMCategoryService *categoryService;
 
 @end
 
@@ -28,6 +33,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.categoryService = [[TMCategoryService alloc] init];
+    
+    [self.categoryService getCategoriesForNumber:nil
+                                         success:^(NSArray *categories) {
+                                             NSLog(@"%@", categories);
+                                         }
+                                         failure:^(NSError *error) {
+                                             NSLog(@"%@", error);
+                                         }];
+    
 }
 
 - (void)didReceiveMemoryWarning

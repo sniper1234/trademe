@@ -35,6 +35,10 @@
 		D2D77575171905D700ED68C4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756D1719058D00ED68C4 /* MobileCoreServices.framework */; };
 		D2D77576171905E000ED68C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756B1719058400ED68C4 /* CoreData.framework */; };
 		D2D77577171905EC00ED68C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775691719056F00ED68C4 /* CFNetwork.framework */; };
+		D2D7757C17190A4500ED68C4 /* TMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7757B17190A4500ED68C4 /* TMCategory.m */; };
+		D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775821719106E00ED68C4 /* TMBaseService.m */; };
+		D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D77588171910F200ED68C4 /* TMCategoryService.m */; };
+		D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,16 @@
 		D2D7756D1719058D00ED68C4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D2D7756F1719059600ED68C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D2D775711719059E00ED68C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D2D7757A17190A4500ED68C4 /* TMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategory.h; sourceTree = "<group>"; };
+		D2D7757B17190A4500ED68C4 /* TMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategory.m; sourceTree = "<group>"; };
+		D2D7757D17190B4800ED68C4 /* TMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMModels.h; sourceTree = "<group>"; };
+		D2D775811719106E00ED68C4 /* TMBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBaseService.h; sourceTree = "<group>"; };
+		D2D775821719106E00ED68C4 /* TMBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBaseService.m; sourceTree = "<group>"; };
+		D2D77584171910A100ED68C4 /* TMServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMServices.h; sourceTree = "<group>"; };
+		D2D77587171910F200ED68C4 /* TMCategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryService.h; sourceTree = "<group>"; };
+		D2D77588171910F200ED68C4 /* TMCategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryService.m; sourceTree = "<group>"; };
+		D2D7758A1719126A00ED68C4 /* TMCategory+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+Mapping.h"; sourceTree = "<group>"; };
+		D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+Mapping.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +196,8 @@
 		D2D775031718F42200ED68C4 /* TradeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2D775801719104300ED68C4 /* Services */,
+				D2D77579171909F600ED68C4 /* Models */,
 				D2D7750C1718F42200ED68C4 /* TMAppDelegate.h */,
 				D2D7750D1718F42200ED68C4 /* TMAppDelegate.m */,
 				D2D775151718F42200ED68C4 /* TMFirstViewController.h */,
@@ -257,6 +273,30 @@
 				D2D775671719043000ED68C4 /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D2D77579171909F600ED68C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2D7757D17190B4800ED68C4 /* TMModels.h */,
+				D2D7757A17190A4500ED68C4 /* TMCategory.h */,
+				D2D7757B17190A4500ED68C4 /* TMCategory.m */,
+				D2D7758A1719126A00ED68C4 /* TMCategory+Mapping.h */,
+				D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2D775801719104300ED68C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2D77584171910A100ED68C4 /* TMServices.h */,
+				D2D775811719106E00ED68C4 /* TMBaseService.h */,
+				D2D775821719106E00ED68C4 /* TMBaseService.m */,
+				D2D77587171910F200ED68C4 /* TMCategoryService.h */,
+				D2D77588171910F200ED68C4 /* TMCategoryService.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +456,10 @@
 				D2D7750E1718F42200ED68C4 /* TMAppDelegate.m in Sources */,
 				D2D775171718F42200ED68C4 /* TMFirstViewController.m in Sources */,
 				D2D7751E1718F42200ED68C4 /* TMSecondViewController.m in Sources */,
+				D2D7757C17190A4500ED68C4 /* TMCategory.m in Sources */,
+				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
+				D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */,
+				D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
