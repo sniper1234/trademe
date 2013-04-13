@@ -39,6 +39,34 @@
 			remoteGlobalIDString = D2D774F91718F42200ED68C4;
 			remoteInfo = TradeMeApp;
 		};
+		D2D775601719043000ED68C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D775591719042F00ED68C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		D2D775621719043000ED68C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D775591719042F00ED68C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		D2D775641719043000ED68C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D775591719042F00ED68C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		D2D775661719043000ED68C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2D775591719042F00ED68C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +99,7 @@
 		D2D775391718F42200ED68C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2D7753B1718F42200ED68C4 /* TradeMeAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeMeAppTests.h; sourceTree = "<group>"; };
 		D2D7753C1718F42200ED68C4 /* TradeMeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeMeAppTests.m; sourceTree = "<group>"; };
+		D2D775591719042F00ED68C4 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RestKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +129,7 @@
 		D2D774F11718F42200ED68C4 = {
 			isa = PBXGroup;
 			children = (
+				D2D77557171902D000ED68C4 /* Vendor */,
 				D2D775031718F42200ED68C4 /* TradeMeApp */,
 				D2D775351718F42200ED68C4 /* TradeMeAppTests */,
 				D2D774FC1718F42200ED68C4 /* Frameworks */,
@@ -180,6 +210,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D2D77557171902D000ED68C4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D2D77558171902F600ED68C4 /* RestKit */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		D2D77558171902F600ED68C4 /* RestKit */ = {
+			isa = PBXGroup;
+			children = (
+				D2D775591719042F00ED68C4 /* RestKit.xcodeproj */,
+			);
+			path = RestKit;
+			sourceTree = "<group>";
+		};
+		D2D7755A1719042F00ED68C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2D775611719043000ED68C4 /* libRestKit.a */,
+				D2D775631719043000ED68C4 /* RestKitTests.octest */,
+				D2D775651719043000ED68C4 /* RestKit.framework */,
+				D2D775671719043000ED68C4 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +296,12 @@
 			mainGroup = D2D774F11718F42200ED68C4;
 			productRefGroup = D2D774FB1718F42200ED68C4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D2D7755A1719042F00ED68C4 /* Products */;
+					ProjectRef = D2D775591719042F00ED68C4 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D2D774F91718F42200ED68C4 /* TradeMeApp */,
@@ -246,6 +309,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D2D775611719043000ED68C4 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = D2D775601719043000ED68C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2D775631719043000ED68C4 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = D2D775621719043000ED68C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2D775651719043000ED68C4 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = D2D775641719043000ED68C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2D775671719043000ED68C4 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = D2D775661719043000ED68C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D2D774F81718F42200ED68C4 /* Resources */ = {
@@ -488,6 +582,7 @@
 				D2D775421718F42200ED68C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2D775431718F42200ED68C4 /* Build configuration list for PBXNativeTarget "TradeMeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +591,7 @@
 				D2D775451718F42200ED68C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

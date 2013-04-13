@@ -1,0 +1,3 @@
+[submodule "TradeMeApp/Vendor/RestKit"]
+	path = TradeMeApp/Vendor/RestKit
+	url = git://github.com/RestKit/RestKit.git
