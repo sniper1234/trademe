@@ -11,3 +11,4 @@ TODO
 * Push responsibility of the mapped result into command (could the command hold the response?)
 * The UI, all of it. I'm thinking something dark and moody.
 * Navigation
+* Caching using CoreData
