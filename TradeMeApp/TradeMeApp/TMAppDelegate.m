@@ -10,6 +10,7 @@
 #import "TMFirstViewController.h"
 #import "TMSecondViewController.h"
 #import <RestKit/RestKit.h>
+#import "TMCategoryViewController.h"
 
 @implementation TMAppDelegate
 
@@ -17,10 +18,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[TMFirstViewController alloc] initWithNibName:@"TMFirstViewController" bundle:nil];
+    TMCategoryViewController *categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
+//    UIViewController *viewController1 = [[TMFirstViewController alloc] initWithNibName:@"TMFirstViewController" bundle:nil];
     UIViewController *viewController2 = [[TMSecondViewController alloc] initWithNibName:@"TMSecondViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[categoryViewController, viewController2];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
