@@ -9,23 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 
+@protocol TMCommandProtocol;
+
 @interface TMBaseService : NSObject
 
 /**
- * Successful status codes.
+ * Make a request with the command
+ *
+ * @param command The command to process, e.g. get categories.
+ * @param success The success callback.
+ * @param failure The failure callback.
  */
-@property (strong, nonatomic) NSIndexSet *statusCodes;
-
-/**
- * Response descriptors.
- */
-@property (strong, nonatomic) NSArray *responseDescriptors;
-
-- (NSURLRequest *)requestWithPath:(NSString *)path queryStringParameters:(NSDictionary *)queryStringParameters;
-
-- (void)makeRequestWithPath:(NSString *)path
-      queryStringParameters:(NSDictionary *)queryStringParameters
-                    success:(void (^)(RKMappingResult *mappingResult))success
-                    failure:(void (^)(NSError *error))failure;
+- (void)makeRequestWithCommand:(id<TMCommandProtocol>)command
+                       success:(void (^)(RKMappingResult *mappingResult))success
+                       failure:(void (^)(NSError *error))failure;
 
 @end

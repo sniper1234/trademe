@@ -7,12 +7,15 @@
 //
 
 #import "TMCategoryViewController.h"
-#import "TMCategoryService.h"
-#import "TMCategory.h"
+#import "TMModels.h"
+#import "TMGetCategoriesCommand.h"
+#import "TMGetCategoryAttributesCommand.h"
+#import "TMBaseService.h"
+#import "MBProgressHUD.h"
 
 @interface TMCategoryViewController ()
 
-@property (strong, nonatomic) TMCategoryService *categoryService;
+@property (strong, nonatomic) TMBaseService *service;
 
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 
@@ -26,7 +29,7 @@
     if ( (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) ) {
         // Custom initialization
         
-        self.categoryService = [[TMCategoryService alloc] init];
+        self.service = [[TMBaseService alloc] init];
     }
     return self;
 }
@@ -34,25 +37,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = NSLocalizedString(@"Categories", @"Categories");
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     __weak TMCategoryViewController *weakSelf = self;
-    
-    [self.categoryService getCategoriesForNumber:@"0001-"
-                                           depth:@(1)
-                                          region:@(-1)
-                                      withCounts:YES
-                                         success:^(NSArray *categories) {
-                                             NSLog(@"%@", categories);
-                                             weakSelf.categories = categories;
-                                             [weakSelf.categoryTableView reloadData];
-                                         }
-                                         failure:^(NSError *error) {
-                                             NSLog(@"%@", error.localizedDescription);
-                                         }];
+    [self.service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]
+                                 success:^(RKMappingResult *mappingResult) {
+                                     weakSelf.categories = mappingResult.array;
+                                     [weakSelf.categoryTableView reloadData];
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }
+                                 failure:^(NSError *error) {
+                                     NSLog(@"%@", error.localizedDescription);
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,7 +87,7 @@
     TMCategory *category = self.categories[0];
     TMCategory *subCategory = category.subcategories[indexPath.row];
     
-    cell.textLabel.text = subCategory.name;
+    cell.textLabel.text = subCategory.displayTitle;
     cell.detailTextLabel.text = subCategory.number;
 
     return cell;
@@ -91,6 +97,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // TODO Tie this in properly with the table view.
+    TMCategory *category = self.categories[0];
+    TMCategory *subCategory = category.subcategories[indexPath.row];
+
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    TMGetCategoryAttributesCommand *command = [[TMGetCategoryAttributesCommand alloc] init];
+    command.category = subCategory.number;
+    
+    [self.service makeRequestWithCommand:command
+                                 success:^(RKMappingResult *mappingResult) {
+                                     NSLog(@"%@", mappingResult.array[0]);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }
+                                 failure:^(NSError *error) {
+                                     NSLog(@"%@", error.localizedDescription);
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }];
 }
 
 @end

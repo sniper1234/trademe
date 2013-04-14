@@ -12,20 +12,29 @@
 
 @interface TMCategory (Mapping)
 
+/**
+ * The REstKit mapping.
+ */
 + (RKMapping *)mapping;
 
 /**
  * Map the isRestricted object to isRestricted value type.
+ *
+ * @remarks This is used to bridge the requirement that RestKit needs to map to an object.
  */
 @property (nonatomic) NSNumber *mapIsRestricted;
 
 /**
  * Map the hasLegalNotice object to hasLegalNotice value type.
+ *
+ * @remarks This is used to bridge the requirement that RestKit needs to map to an object.
  */
 @property (nonatomic) NSNumber *mapHasLegalNotice;
 
 /**
  * Map the hasClassifieds object to hasClassifieds value type.
+ *
+ * @remarks This is used to bridge the requirement that RestKit needs to map to an object.
  */
 @property (nonatomic) NSNumber *mapHasClassifieds;
 

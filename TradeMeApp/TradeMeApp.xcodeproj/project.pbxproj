@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA99F237E6D4410DAC3D2C4D /* libPods.a */; };
 		D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FD1718F42200ED68C4 /* UIKit.framework */; };
 		D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
 		D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775011718F42200ED68C4 /* CoreGraphics.framework */; };
@@ -16,7 +17,6 @@
 		D2D775101718F42200ED68C4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D7750F1718F42200ED68C4 /* Default.png */; };
 		D2D775121718F42200ED68C4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775111718F42200ED68C4 /* Default@2x.png */; };
 		D2D775141718F42200ED68C4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775131718F42200ED68C4 /* Default-568h@2x.png */; };
-		D2D775171718F42200ED68C4 /* TMFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775161718F42200ED68C4 /* TMFirstViewController.m */; };
 		D2D775191718F42200ED68C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775181718F42200ED68C4 /* first.png */; };
 		D2D7751B1718F42200ED68C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D7751A1718F42200ED68C4 /* first@2x.png */; };
 		D2D7751E1718F42200ED68C4 /* TMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7751D1718F42200ED68C4 /* TMSecondViewController.m */; };
@@ -37,11 +37,15 @@
 		D2D77577171905EC00ED68C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775691719056F00ED68C4 /* CFNetwork.framework */; };
 		D2D7757C17190A4500ED68C4 /* TMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7757B17190A4500ED68C4 /* TMCategory.m */; };
 		D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775821719106E00ED68C4 /* TMBaseService.m */; };
-		D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D77588171910F200ED68C4 /* TMCategoryService.m */; };
 		D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */; };
 		D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */; };
 		D2D77595171A676700ED68C4 /* TMCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D77593171A676700ED68C4 /* TMCategoryViewController.m */; };
 		D2D77596171A676700ED68C4 /* TMCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */; };
+		D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */; };
+		D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */; };
+		D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */; };
+		D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */; };
+		D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D2D774FA1718F42200ED68C4 /* TradeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D774FD1718F42200ED68C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2D774FF1718F42200ED68C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,8 +101,6 @@
 		D2D7750F1718F42200ED68C4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2D775111718F42200ED68C4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2D775131718F42200ED68C4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D2D775151718F42200ED68C4 /* TMFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMFirstViewController.h; sourceTree = "<group>"; };
-		D2D775161718F42200ED68C4 /* TMFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMFirstViewController.m; sourceTree = "<group>"; };
 		D2D775181718F42200ED68C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		D2D7751A1718F42200ED68C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		D2D7751C1718F42200ED68C4 /* TMSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSecondViewController.h; sourceTree = "<group>"; };
@@ -123,9 +126,6 @@
 		D2D7757D17190B4800ED68C4 /* TMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMModels.h; sourceTree = "<group>"; };
 		D2D775811719106E00ED68C4 /* TMBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBaseService.h; sourceTree = "<group>"; };
 		D2D775821719106E00ED68C4 /* TMBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBaseService.m; sourceTree = "<group>"; };
-		D2D77584171910A100ED68C4 /* TMServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMServices.h; sourceTree = "<group>"; };
-		D2D77587171910F200ED68C4 /* TMCategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryService.h; sourceTree = "<group>"; };
-		D2D77588171910F200ED68C4 /* TMCategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryService.m; sourceTree = "<group>"; };
 		D2D7758A1719126A00ED68C4 /* TMCategory+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+Mapping.h"; sourceTree = "<group>"; };
 		D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+Mapping.m"; sourceTree = "<group>"; };
 		D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UrlEncode.h"; sourceTree = "<group>"; };
@@ -133,6 +133,18 @@
 		D2D77592171A676700ED68C4 /* TMCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryViewController.h; sourceTree = "<group>"; };
 		D2D77593171A676700ED68C4 /* TMCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryViewController.m; sourceTree = "<group>"; };
 		D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMCategoryViewController.xib; sourceTree = "<group>"; };
+		D2D7759D171A6F2A00ED68C4 /* TMGetCategoriesCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMGetCategoriesCommand.h; sourceTree = "<group>"; };
+		D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMGetCategoriesCommand.m; sourceTree = "<group>"; };
+		D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommandProtocol.h; sourceTree = "<group>"; };
+		D2D775A4171A95BC00ED68C4 /* TMCategory+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+ViewModel.h"; sourceTree = "<group>"; };
+		D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+ViewModel.m"; sourceTree = "<group>"; };
+		D2D775B5171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMGetCategoryAttributesCommand.h; sourceTree = "<group>"; };
+		D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMGetCategoryAttributesCommand.m; sourceTree = "<group>"; };
+		D2D775B8171AA82800ED68C4 /* TMCategoryAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryAttributes.h; sourceTree = "<group>"; };
+		D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryAttributes.m; sourceTree = "<group>"; };
+		D2D775BB171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategoryAttributes+Mapping.h"; sourceTree = "<group>"; };
+		D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategoryAttributes+Mapping.m"; sourceTree = "<group>"; };
+		DA99F237E6D4410DAC3D2C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +161,7 @@
 				D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */,
 				D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */,
 				D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */,
+				07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +186,7 @@
 				D2D775351718F42200ED68C4 /* TradeMeAppTests */,
 				D2D774FC1718F42200ED68C4 /* Frameworks */,
 				D2D774FB1718F42200ED68C4 /* Products */,
+				6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +211,7 @@
 				D2D774FF1718F42200ED68C4 /* Foundation.framework */,
 				D2D775011718F42200ED68C4 /* CoreGraphics.framework */,
 				D2D7752F1718F42200ED68C4 /* SenTestingKit.framework */,
+				DA99F237E6D4410DAC3D2C4D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,8 +224,6 @@
 				D2D77579171909F600ED68C4 /* Models */,
 				D2D7750C1718F42200ED68C4 /* TMAppDelegate.h */,
 				D2D7750D1718F42200ED68C4 /* TMAppDelegate.m */,
-				D2D775151718F42200ED68C4 /* TMFirstViewController.h */,
-				D2D775161718F42200ED68C4 /* TMFirstViewController.m */,
 				D2D775181718F42200ED68C4 /* first.png */,
 				D2D7751A1718F42200ED68C4 /* first@2x.png */,
 				D2D7751C1718F42200ED68C4 /* TMSecondViewController.h */,
@@ -293,6 +306,12 @@
 				D2D7757B17190A4500ED68C4 /* TMCategory.m */,
 				D2D7758A1719126A00ED68C4 /* TMCategory+Mapping.h */,
 				D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */,
+				D2D775A4171A95BC00ED68C4 /* TMCategory+ViewModel.h */,
+				D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */,
+				D2D775B8171AA82800ED68C4 /* TMCategoryAttributes.h */,
+				D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */,
+				D2D775BB171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.h */,
+				D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,11 +319,9 @@
 		D2D775801719104300ED68C4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D2D77584171910A100ED68C4 /* TMServices.h */,
+				D2D77598171A6DF500ED68C4 /* Commands */,
 				D2D775811719106E00ED68C4 /* TMBaseService.h */,
 				D2D775821719106E00ED68C4 /* TMBaseService.m */,
-				D2D77587171910F200ED68C4 /* TMCategoryService.h */,
-				D2D77588171910F200ED68C4 /* TMCategoryService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,6 +345,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D2D77598171A6DF500ED68C4 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */,
+				D2D7759D171A6F2A00ED68C4 /* TMGetCategoriesCommand.h */,
+				D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */,
+				D2D775B5171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.h */,
+				D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,9 +364,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2D775401718F42200ED68C4 /* Build configuration list for PBXNativeTarget "TradeMeApp" */;
 			buildPhases = (
+				F7E24B12D29D48E7B50FC1DD /* Check Pods Manifest.lock */,
 				D2D774F61718F42200ED68C4 /* Sources */,
 				D2D774F71718F42200ED68C4 /* Frameworks */,
 				D2D774F81718F42200ED68C4 /* Resources */,
+				C225A6607E7449B18C13C648 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -462,6 +493,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C225A6607E7449B18C13C648 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		D2D7752C1718F42200ED68C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,6 +520,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		F7E24B12D29D48E7B50FC1DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -484,14 +543,17 @@
 			files = (
 				D2D7750A1718F42200ED68C4 /* main.m in Sources */,
 				D2D7750E1718F42200ED68C4 /* TMAppDelegate.m in Sources */,
-				D2D775171718F42200ED68C4 /* TMFirstViewController.m in Sources */,
 				D2D7751E1718F42200ED68C4 /* TMSecondViewController.m in Sources */,
 				D2D7757C17190A4500ED68C4 /* TMCategory.m in Sources */,
 				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
-				D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */,
 				D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */,
 				D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */,
 				D2D77595171A676700ED68C4 /* TMCategoryViewController.m in Sources */,
+				D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */,
+				D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */,
+				D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */,
+				D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */,
+				D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,12 +669,17 @@
 		};
 		D2D775411718F42200ED68C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
@@ -623,12 +690,17 @@
 		};
 		D2D775421718F42200ED68C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
