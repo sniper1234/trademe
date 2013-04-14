@@ -50,7 +50,7 @@ static NSString *format = @"json";
     }
     
     if (self.withCounts) {
-        [parameters setValue:@"YES" forKey:@"with_count"];
+        [parameters setValue:@"true" forKey:@"with_counts"];
     }
     
     NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, [parameters toQueryStringParameters]];
@@ -71,6 +71,15 @@ static NSString *format = @"json";
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
     command.number = @"0001-0026-1255-";
+    
+    return command;
+}
+
++ (TMGetCategoriesCommand *)booksCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0193-";
+    command.withCounts = YES;
     
     return command;
 }

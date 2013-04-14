@@ -41,4 +41,9 @@
  */
 + (TMGetCategoriesCommand *)motorbikesCategory;
 
+/**
+ * Get the books category.
+ */
++ (TMGetCategoriesCommand *)booksCategory;
+
 @end

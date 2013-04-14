@@ -43,7 +43,7 @@
     [super viewWillAppear:animated];
     
     __weak TMCategoryViewController *weakSelf = self;
-    [self.service makeRequestWithCommand:[TMGetCategoriesCommand motorbikesCategory]
+    [self.service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]
                                  success:^(RKMappingResult *mappingResult) {
                                      weakSelf.categories = mappingResult.array;
                                      [weakSelf.categoryTableView reloadData];
