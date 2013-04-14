@@ -10,10 +10,11 @@
 #import "TMCategory.h"
 #import "TMCategory+Mapping.h"
 #import "NSDictionary+UrlEncode.h"
+#import <RestKit/RestKit.h>
+
+static NSString *format = @"json";
 
 @interface TMGetCategoriesCommand ()
-
-- (void)addResponseDescriptors;
 
 @end
 
@@ -23,13 +24,12 @@
     
     if ( (self = [super init]) ) {
         
-        [self addResponseDescriptors];
     }
     
     return self;
 }
 
-- (NSURLRequest *)request {
+- (NSURLRequest *)requestForRootPath:(NSString *)rootPath {
     
     NSString *path;
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
@@ -52,16 +52,32 @@
     if (self.withCounts) {
         [parameters setValue:@"YES" forKey:@"with_count"];
     }
-
-    NSString *fullPath = [NSString stringWithFormat:@"http://api.tmsandbox.co.nz/%@.%@%@", path, format, [parameters toQueryStringParameters]];
+    
+    NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, [parameters toQueryStringParameters]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
     
     return request;
 }
 
++ (TMGetCategoriesCommand *)motorsCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0001-";
+    
+    return command;
+}
+
++ (TMGetCategoriesCommand *)motorbikesCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0001-0026-1255-";
+    
+    return command;
+}
+
 #pragma mark - TMGetCategoriesCommand
 
-- (void)addResponseDescriptors {
+- (NSArray *)responseDescriptors {
     
     RKResponseDescriptor *responseDescriptorForCategory;
     responseDescriptorForCategory = [RKResponseDescriptor responseDescriptorWithMapping:[[TMCategory class] mapping]
@@ -75,7 +91,7 @@
                                                                                   keyPath:@""
                                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    self.responseDescriptors = @[responseDescriptorForCategory, responseDescriptorForCategories];
+    return @[responseDescriptorForCategory, responseDescriptorForCategories];
 }
 
 @end

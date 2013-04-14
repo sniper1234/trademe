@@ -10,8 +10,8 @@
 
 @protocol TMCommandProtocol <NSObject>
 
-@property (strong, nonatomic) NSURLRequest *request;
+@property (readonly, nonatomic) NSArray *responseDescriptors;
 
-@property (strong, nonatomic) NSArray *responseDescriptors;
+- (NSURLRequest *)requestForRootPath:(NSString *)rootPath;
 
 @end

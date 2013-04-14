@@ -13,23 +13,6 @@
 
 @interface TMBaseService : NSObject
 
-/**
- * Successful status codes.
- */
-@property (strong, nonatomic) NSIndexSet *statusCodes;
-
-/**
- * Response descriptors.
- */
-@property (strong, nonatomic) NSArray *responseDescriptors;
-
-- (NSURLRequest *)requestWithPath:(NSString *)path queryStringParameters:(NSDictionary *)queryStringParameters;
-
-- (void)makeRequestWithPath:(NSString *)path
-      queryStringParameters:(NSDictionary *)queryStringParameters
-                    success:(void (^)(RKMappingResult *mappingResult))success
-                    failure:(void (^)(NSError *error))failure;
-
 - (void)makeRequestWithCommand:(id<TMCommandProtocol>)command
                        success:(void (^)(RKMappingResult *mappingResult))success
                        failure:(void (^)(NSError *error))failure;

@@ -8,3 +8,4 @@
 
 #import "TMCategory.h"
 #import "TMCategory+Mapping.h"
+#import "TMCategory+ViewModel.h"

@@ -13,6 +13,8 @@
 
 @interface TMBaseService ()
 
+@property (strong, nonatomic) NSString *rootPath;
+
 @end
 
 @implementation TMBaseService
@@ -21,7 +23,7 @@
     
     if ( (self = [super init]) ) {
         
-        self.statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+        self.rootPath = @"http://api.tmsandbox.co.nz/";
         
         RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     }
@@ -29,41 +31,12 @@
     return self;
 }
 
-- (NSURLRequest *)requestWithPath:(NSString *)path queryStringParameters:(NSDictionary *)queryStringParameters {
-    
-    static NSString *format = @"json";
-    
-    NSString *fullPath = [NSString stringWithFormat:@"http://api.tmsandbox.co.nz/%@.%@%@", path, format, [queryStringParameters toQueryStringParameters]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
-    
-    return request;
-}
-
-- (void)makeRequestWithPath:(NSString *)path
-      queryStringParameters:(NSDictionary *)queryStringParameters
-                    success:(void (^)(RKMappingResult *mappingResult))success
-                    failure:(void (^)(NSError *error))failure {
-    
-    RKObjectRequestOperation *operation;
-    operation = [[RKObjectRequestOperation alloc] initWithRequest:[self requestWithPath:path queryStringParameters:queryStringParameters]
-                                              responseDescriptors:self.responseDescriptors];
-    
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        success(mappingResult);
-    }
-                                     failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                         failure(error);
-                                     }];
-    
-    [operation start];
-}
-
 - (void)makeRequestWithCommand:(id<TMCommandProtocol>)command
                        success:(void (^)(RKMappingResult *mappingResult))success
                        failure:(void (^)(NSError *error))failure {
     
     RKObjectRequestOperation *operation;
-    operation = [[RKObjectRequestOperation alloc] initWithRequest:command.request
+    operation = [[RKObjectRequestOperation alloc] initWithRequest:[command requestForRootPath:self.rootPath]
                                               responseDescriptors:command.responseDescriptors];
     
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -75,6 +48,5 @@
     
     [operation start];
 }
-
 
 @end

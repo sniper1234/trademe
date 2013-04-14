@@ -7,7 +7,6 @@
 //
 
 #import "TMAppDelegate.h"
-#import "TMFirstViewController.h"
 #import "TMSecondViewController.h"
 #import <RestKit/RestKit.h>
 #import "TMCategoryViewController.h"
