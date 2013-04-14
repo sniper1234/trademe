@@ -10,6 +10,14 @@
 
 @implementation TMCategory
 
+- (id)init {
+    
+    if ( (self = [super init]) ) {
+        _subcategories = [NSMutableArray array];
+    }
+    
+    return self;
+}
 
 #pragma mark - NSObject
 

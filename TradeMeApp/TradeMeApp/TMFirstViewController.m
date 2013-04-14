@@ -25,25 +25,24 @@
     if (self) {
         self.title = NSLocalizedString(@"First", @"First");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.categoryService = [[TMCategoryService alloc] init];
     }
     return self;
 }
 							
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
-    self.categoryService = [[TMCategoryService alloc] init];
-    
-    [self.categoryService getCategoriesForNumber:nil
+    [self.categoryService getCategoriesForNumber:@"0001-"
+                                           depth:@(1)
+                                          region:@(-1)
+                                      withCounts:YES
                                          success:^(NSArray *categories) {
                                              NSLog(@"%@", categories);
                                          }
                                          failure:^(NSError *error) {
-                                             NSLog(@"%@", error);
+                                             NSLog(@"%@", error.localizedDescription);
                                          }];
-    
 }
 
 - (void)didReceiveMemoryWarning

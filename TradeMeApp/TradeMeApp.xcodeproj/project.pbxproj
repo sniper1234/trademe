@@ -39,6 +39,7 @@
 		D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775821719106E00ED68C4 /* TMBaseService.m */; };
 		D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D77588171910F200ED68C4 /* TMCategoryService.m */; };
 		D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */; };
+		D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		D2D77588171910F200ED68C4 /* TMCategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryService.m; sourceTree = "<group>"; };
 		D2D7758A1719126A00ED68C4 /* TMCategory+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+Mapping.h"; sourceTree = "<group>"; };
 		D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+Mapping.m"; sourceTree = "<group>"; };
+		D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UrlEncode.h"; sourceTree = "<group>"; };
+		D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+UrlEncode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,7 @@
 		D2D77557171902D000ED68C4 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				D2D7758D171A607E00ED68C4 /* TrustyFrog */,
 				D2D77558171902F600ED68C4 /* RestKit */,
 			);
 			path = Vendor;
@@ -297,6 +301,15 @@
 				D2D77588171910F200ED68C4 /* TMCategoryService.m */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D2D7758D171A607E00ED68C4 /* TrustyFrog */ = {
+			isa = PBXGroup;
+			children = (
+				D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */,
+				D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */,
+			);
+			path = TrustyFrog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +473,7 @@
 				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
 				D2D77589171910F200ED68C4 /* TMCategoryService.m in Sources */,
 				D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */,
+				D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

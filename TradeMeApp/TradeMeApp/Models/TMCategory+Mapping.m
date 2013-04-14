@@ -25,6 +25,11 @@
         @"hasClassifieds": @"mapHasClassifieds"
      }];
     
+    RKRelationshipMapping *subCategoriesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"Subcategories"
+                                                                                              toKeyPath:@"subcategories"
+                                                                                            withMapping:mapping];
+    [mapping addPropertyMapping:subCategoriesMapping];
+    
     return mapping;
 }
 

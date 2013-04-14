@@ -46,4 +46,9 @@
  */
 @property () BOOL hasClassifieds;
 
+/**
+ * The list of subcategories belonging to this category.
+ */
+@property (readonly) NSMutableArray *subcategories;
+
 @end

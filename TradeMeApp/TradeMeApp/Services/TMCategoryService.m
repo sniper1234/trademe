@@ -13,8 +13,6 @@
 
 @interface TMCategoryService ()
 
-@property (strong, nonatomic) NSArray *responseDescriptors;
-
 @end
 
 @implementation TMCategoryService
@@ -51,19 +49,55 @@
     else {
         path = @"v1/Categories";
     }
+    
+    [self makeRequestWithPath:path
+        queryStringParameters:nil
+                      success:^(RKMappingResult *mappingResult) {
+                          success(mappingResult.array);
+                      }
+                      failure:^(NSError *error) {
+                          failure(error);
+                      }];
+}
 
-    RKObjectRequestOperation *operation;
-    operation = [[RKObjectRequestOperation alloc] initWithRequest:[self requestWithPath:path]
-                                              responseDescriptors:self.responseDescriptors];
+- (void)getCategoriesForNumber:(NSString *)number
+                         depth:(NSNumber *)depth
+                        region:(NSNumber *)region
+                    withCounts:(BOOL)withCounts
+                       success:(CategoriesResult)success
+                       failure:(ErrorResult)failure {
     
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        success(mappingResult.array);
+    NSString *path;
+    NSString *queryString;
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    if (number) {
+        path = [NSString stringWithFormat:@"v1/Categories/%@", number];
     }
-                                     failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                         failure(error);
-                                     }];
+    else {
+        path = @"v1/Categories";
+    }
     
-    [operation start];
+    if (depth) {
+        [parameters setValue:depth forKey:@"depth"];
+    }
+    
+    if (region) {
+        [parameters setValue:region forKey:@"region"];
+    }
+    
+    if (withCounts) {
+        [parameters setValue:@"YES" forKey:@"with_count"];
+    }
+    
+    [self makeRequestWithPath:path
+        queryStringParameters:parameters
+                      success:^(RKMappingResult *mappingResult) {
+                          success(mappingResult.array);
+                      }
+                      failure:^(NSError *error) {
+                          failure(error);
+                      }];
 }
 
 @end

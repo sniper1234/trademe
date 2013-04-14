@@ -7,14 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface TMBaseService : NSObject
 
-/*
+/**
  * Successful status codes.
  */
-@property (readonly, nonatomic) NSIndexSet *statusCodes;
+@property (strong, nonatomic) NSIndexSet *statusCodes;
 
-- (NSURLRequest *)requestWithPath:(NSString *)path;
+/**
+ * Response descriptors.
+ */
+@property (strong, nonatomic) NSArray *responseDescriptors;
+
+- (NSURLRequest *)requestWithPath:(NSString *)path queryStringParameters:(NSDictionary *)queryStringParameters;
+
+- (void)makeRequestWithPath:(NSString *)path
+      queryStringParameters:(NSDictionary *)queryStringParameters
+                    success:(void (^)(RKMappingResult *mappingResult))success
+                    failure:(void (^)(NSError *error))failure;
 
 @end
