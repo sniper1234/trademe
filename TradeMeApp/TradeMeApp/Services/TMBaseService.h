@@ -13,6 +13,13 @@
 
 @interface TMBaseService : NSObject
 
+/**
+ * Make a request with the command
+ *
+ * @param command The command to process, e.g. get categories.
+ * @param success The success callback.
+ * @param failure The failure callback.
+ */
 - (void)makeRequestWithCommand:(id<TMCommandProtocol>)command
                        success:(void (^)(RKMappingResult *mappingResult))success
                        failure:(void (^)(NSError *error))failure;

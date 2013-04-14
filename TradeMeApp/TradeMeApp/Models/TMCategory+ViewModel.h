@@ -10,6 +10,9 @@
 
 @interface TMCategory (ViewModel)
 
+/**
+ * The display title.
+ */
 @property (readonly) NSString *displayTitle;
 
 @end
