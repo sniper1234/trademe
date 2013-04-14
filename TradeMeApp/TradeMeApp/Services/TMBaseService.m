@@ -9,6 +9,7 @@
 #import "TMBaseService.h"
 #import <RestKit/RestKit.h>
 #import "NSDictionary+UrlEncode.h"
+#import "TMCommandProtocol.h"
 
 @interface TMBaseService ()
 
@@ -56,5 +57,24 @@
     
     [operation start];
 }
+
+- (void)makeRequestWithCommand:(id<TMCommandProtocol>)command
+                       success:(void (^)(RKMappingResult *mappingResult))success
+                       failure:(void (^)(NSError *error))failure {
+    
+    RKObjectRequestOperation *operation;
+    operation = [[RKObjectRequestOperation alloc] initWithRequest:command.request
+                                              responseDescriptors:command.responseDescriptors];
+    
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        success(mappingResult);
+    }
+                                     failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                         failure(error);
+                                     }];
+    
+    [operation start];
+}
+
 
 @end

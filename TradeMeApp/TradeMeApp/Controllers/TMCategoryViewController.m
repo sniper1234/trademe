@@ -9,6 +9,7 @@
 #import "TMCategoryViewController.h"
 #import "TMCategoryService.h"
 #import "TMCategory.h"
+#import "TMGetCategoriesCommand.h"
 
 @interface TMCategoryViewController ()
 
@@ -41,18 +42,34 @@
     
     __weak TMCategoryViewController *weakSelf = self;
     
-    [self.categoryService getCategoriesForNumber:@"0001-"
-                                           depth:@(1)
-                                          region:@(-1)
-                                      withCounts:YES
-                                         success:^(NSArray *categories) {
-                                             NSLog(@"%@", categories);
-                                             weakSelf.categories = categories;
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0001-";
+    command.depth = @(1);
+    command.region = @(-1);
+    command.withCounts = YES;
+    
+    [self.categoryService makeRequestWithCommand:command
+                                         success:^(RKMappingResult *mappingResult) {
+                                             weakSelf.categories = mappingResult.array;
                                              [weakSelf.categoryTableView reloadData];
                                          }
                                          failure:^(NSError *error) {
                                              NSLog(@"%@", error.localizedDescription);
                                          }];
+    
+//    [self.categoryService getCategoriesForNumber:@"0001-"
+//                                           depth:@(1)
+//                                          region:@(-1)
+//                                      withCounts:YES
+//                                         success:^(NSArray *categories) {
+//                                             NSLog(@"%@", categories);
+//                                             weakSelf.categories = categories;
+//                                             [weakSelf.categoryTableView reloadData];
+//                                         }
+//                                         failure:^(NSError *error) {
+//                                             NSLog(@"%@", error.localizedDescription);
+//                                         }];
 }
 
 - (void)didReceiveMemoryWarning {
