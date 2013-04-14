@@ -43,6 +43,9 @@
 		D2D77596171A676700ED68C4 /* TMCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */; };
 		D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */; };
 		D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */; };
+		D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */; };
+		D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */; };
+		D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,12 @@
 		D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommandProtocol.h; sourceTree = "<group>"; };
 		D2D775A4171A95BC00ED68C4 /* TMCategory+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+ViewModel.h"; sourceTree = "<group>"; };
 		D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+ViewModel.m"; sourceTree = "<group>"; };
+		D2D775B5171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMGetCategoryAttributesCommand.h; sourceTree = "<group>"; };
+		D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMGetCategoryAttributesCommand.m; sourceTree = "<group>"; };
+		D2D775B8171AA82800ED68C4 /* TMCategoryAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryAttributes.h; sourceTree = "<group>"; };
+		D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryAttributes.m; sourceTree = "<group>"; };
+		D2D775BB171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategoryAttributes+Mapping.h"; sourceTree = "<group>"; };
+		D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategoryAttributes+Mapping.m"; sourceTree = "<group>"; };
 		DA99F237E6D4410DAC3D2C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,6 +308,10 @@
 				D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */,
 				D2D775A4171A95BC00ED68C4 /* TMCategory+ViewModel.h */,
 				D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */,
+				D2D775B8171AA82800ED68C4 /* TMCategoryAttributes.h */,
+				D2D775B9171AA82800ED68C4 /* TMCategoryAttributes.m */,
+				D2D775BB171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.h */,
+				D2D775BC171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +351,8 @@
 				D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */,
 				D2D7759D171A6F2A00ED68C4 /* TMGetCategoriesCommand.h */,
 				D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */,
+				D2D775B5171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.h */,
+				D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -536,6 +551,9 @@
 				D2D77595171A676700ED68C4 /* TMCategoryViewController.m in Sources */,
 				D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */,
 				D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */,
+				D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */,
+				D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */,
+				D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,3 +9,6 @@
 #import "TMCategory.h"
 #import "TMCategory+Mapping.h"
 #import "TMCategory+ViewModel.h"
+
+#import "TMCategoryAttributes.h"
+#import "TMCategoryAttributes+Mapping.h"

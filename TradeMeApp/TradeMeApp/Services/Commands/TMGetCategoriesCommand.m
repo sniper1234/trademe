@@ -20,13 +20,48 @@ static NSString *format = @"json";
 
 @implementation TMGetCategoriesCommand
 
-- (id)init {
++ (TMGetCategoriesCommand *)motorsCategory {
     
-    if ( (self = [super init]) ) {
-        
-    }
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0001-";
     
-    return self;
+    return command;
+}
+
++ (TMGetCategoriesCommand *)motorbikesCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0001-0026-1255-";
+    
+    return command;
+}
+
++ (TMGetCategoriesCommand *)booksCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = @"0193-";
+    command.withCounts = YES;
+    
+    return command;
+}
+
+#pragma mark - TMCommandProtocol
+
+- (NSArray *)responseDescriptors {
+    
+    RKResponseDescriptor *responseDescriptorForCategory;
+    responseDescriptorForCategory = [RKResponseDescriptor responseDescriptorWithMapping:[[TMCategory class] mapping]
+                                                                            pathPattern:@"/v1/Categories/:categoryID.json"
+                                                                                keyPath:@""
+                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responseDescriptorForCategories;
+    responseDescriptorForCategories = [RKResponseDescriptor responseDescriptorWithMapping:[[TMCategory class] mapping]
+                                                                              pathPattern:@"/v1/Categories.json"
+                                                                                  keyPath:@""
+                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    return @[responseDescriptorForCategory, responseDescriptorForCategories];
 }
 
 - (NSURLRequest *)requestForRootPath:(NSString *)rootPath {
@@ -57,50 +92,6 @@ static NSString *format = @"json";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
     
     return request;
-}
-
-+ (TMGetCategoriesCommand *)motorsCategory {
-    
-    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
-    command.number = @"0001-";
-    
-    return command;
-}
-
-+ (TMGetCategoriesCommand *)motorbikesCategory {
-    
-    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
-    command.number = @"0001-0026-1255-";
-    
-    return command;
-}
-
-+ (TMGetCategoriesCommand *)booksCategory {
-    
-    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
-    command.number = @"0193-";
-    command.withCounts = YES;
-    
-    return command;
-}
-
-#pragma mark - TMGetCategoriesCommand
-
-- (NSArray *)responseDescriptors {
-    
-    RKResponseDescriptor *responseDescriptorForCategory;
-    responseDescriptorForCategory = [RKResponseDescriptor responseDescriptorWithMapping:[[TMCategory class] mapping]
-                                                                            pathPattern:@"/v1/Categories/:categoryID.json"
-                                                                                keyPath:@""
-                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    RKResponseDescriptor *responseDescriptorForCategories;
-    responseDescriptorForCategories = [RKResponseDescriptor responseDescriptorWithMapping:[[TMCategory class] mapping]
-                                                                              pathPattern:@"/v1/Categories.json"
-                                                                                  keyPath:@""
-                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    return @[responseDescriptorForCategory, responseDescriptorForCategories];
 }
 
 @end

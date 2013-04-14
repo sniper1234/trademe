@@ -9,6 +9,7 @@
 #import "TMCategoryViewController.h"
 #import "TMModels.h"
 #import "TMGetCategoriesCommand.h"
+#import "TMGetCategoryAttributesCommand.h"
 #import "TMBaseService.h"
 #import "MBProgressHUD.h"
 
@@ -96,6 +97,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // TODO Tie this in properly with the table view.
+    TMCategory *category = self.categories[0];
+    TMCategory *subCategory = category.subcategories[indexPath.row];
+
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    TMGetCategoryAttributesCommand *command = [[TMGetCategoryAttributesCommand alloc] init];
+    command.category = subCategory.number;
+    
+    [self.service makeRequestWithCommand:command
+                                 success:^(RKMappingResult *mappingResult) {
+                                     NSLog(@"%@", mappingResult.array[0]);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }
+                                 failure:^(NSError *error) {
+                                     NSLog(@"%@", error.localizedDescription);
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 }];
 }
 
 @end
