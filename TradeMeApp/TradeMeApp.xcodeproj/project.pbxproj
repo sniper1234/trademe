@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA99F237E6D4410DAC3D2C4D /* libPods.a */; };
 		D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FD1718F42200ED68C4 /* UIKit.framework */; };
 		D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
 		D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775011718F42200ED68C4 /* CoreGraphics.framework */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D2D774FA1718F42200ED68C4 /* TradeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D774FD1718F42200ED68C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2D774FF1718F42200ED68C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 		D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommandProtocol.h; sourceTree = "<group>"; };
 		D2D775A4171A95BC00ED68C4 /* TMCategory+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMCategory+ViewModel.h"; sourceTree = "<group>"; };
 		D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+ViewModel.m"; sourceTree = "<group>"; };
+		DA99F237E6D4410DAC3D2C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,7 @@
 				D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */,
 				D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */,
 				D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */,
+				07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +177,7 @@
 				D2D775351718F42200ED68C4 /* TradeMeAppTests */,
 				D2D774FC1718F42200ED68C4 /* Frameworks */,
 				D2D774FB1718F42200ED68C4 /* Products */,
+				6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +202,7 @@
 				D2D774FF1718F42200ED68C4 /* Foundation.framework */,
 				D2D775011718F42200ED68C4 /* CoreGraphics.framework */,
 				D2D7752F1718F42200ED68C4 /* SenTestingKit.framework */,
+				DA99F237E6D4410DAC3D2C4D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -343,9 +349,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2D775401718F42200ED68C4 /* Build configuration list for PBXNativeTarget "TradeMeApp" */;
 			buildPhases = (
+				F7E24B12D29D48E7B50FC1DD /* Check Pods Manifest.lock */,
 				D2D774F61718F42200ED68C4 /* Sources */,
 				D2D774F71718F42200ED68C4 /* Frameworks */,
 				D2D774F81718F42200ED68C4 /* Resources */,
+				C225A6607E7449B18C13C648 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -470,6 +478,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C225A6607E7449B18C13C648 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		D2D7752C1718F42200ED68C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +504,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		F7E24B12D29D48E7B50FC1DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -615,12 +651,17 @@
 		};
 		D2D775411718F42200ED68C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
@@ -631,12 +672,17 @@
 		};
 		D2D775421718F42200ED68C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TradeMeApp/TradeMeApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers",
+				);
 				INFOPLIST_FILE = "TradeMeApp/TradeMeApp-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);

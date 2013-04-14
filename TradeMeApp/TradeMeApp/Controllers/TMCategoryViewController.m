@@ -10,6 +10,7 @@
 #import "TMModels.h"
 #import "TMGetCategoriesCommand.h"
 #import "TMBaseService.h"
+#import "MBProgressHUD.h"
 
 @interface TMCategoryViewController ()
 
@@ -39,17 +40,23 @@
     self.title = NSLocalizedString(@"Categories", @"Categories");
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     __weak TMCategoryViewController *weakSelf = self;
     [self.service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]
                                  success:^(RKMappingResult *mappingResult) {
                                      weakSelf.categories = mappingResult.array;
                                      [weakSelf.categoryTableView reloadData];
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                  }
                                  failure:^(NSError *error) {
                                      NSLog(@"%@", error.localizedDescription);
+                                     
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                  }];
 }
 
