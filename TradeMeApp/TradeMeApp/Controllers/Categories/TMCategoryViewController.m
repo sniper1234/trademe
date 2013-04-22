@@ -44,7 +44,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     __weak TMCategoryViewController *weakSelf = self;
     [self.service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]

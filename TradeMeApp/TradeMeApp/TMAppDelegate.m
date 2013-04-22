@@ -27,11 +27,10 @@
     self.categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
 
     [self setupNavigation];
-    [self setupTabbedNavigation];
+//    [self setupTabbedNavigation];
     
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
     [self.window addSubview:self.navController.view];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

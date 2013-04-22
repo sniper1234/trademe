@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA99F237E6D4410DAC3D2C4D /* libPods.a */; };
+		D2215A1817252C76004CFCD6 /* TMCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2215A1617252C76004CFCD6 /* TMCategoryViewController.m */; };
+		D2215A1917252C76004CFCD6 /* TMCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */; };
 		D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FD1718F42200ED68C4 /* UIKit.framework */; };
 		D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
 		D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775011718F42200ED68C4 /* CoreGraphics.framework */; };
@@ -32,8 +34,6 @@
 		D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775821719106E00ED68C4 /* TMBaseService.m */; };
 		D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */; };
 		D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */; };
-		D2D77595171A676700ED68C4 /* TMCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D77593171A676700ED68C4 /* TMCategoryViewController.m */; };
-		D2D77596171A676700ED68C4 /* TMCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */; };
 		D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */; };
 		D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775A5171A95BC00ED68C4 /* TMCategory+ViewModel.m */; };
 		D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */; };
@@ -81,6 +81,9 @@
 
 /* Begin PBXFileReference section */
 		6643F74C1AE042B6B5E935F6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D2215A1517252C76004CFCD6 /* TMCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryViewController.h; sourceTree = "<group>"; };
+		D2215A1617252C76004CFCD6 /* TMCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryViewController.m; sourceTree = "<group>"; };
+		D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMCategoryViewController.xib; sourceTree = "<group>"; };
 		D2D774FA1718F42200ED68C4 /* TradeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D774FD1718F42200ED68C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2D774FF1718F42200ED68C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,9 +118,6 @@
 		D2D7758B1719126A00ED68C4 /* TMCategory+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMCategory+Mapping.m"; sourceTree = "<group>"; };
 		D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UrlEncode.h"; sourceTree = "<group>"; };
 		D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+UrlEncode.m"; sourceTree = "<group>"; };
-		D2D77592171A676700ED68C4 /* TMCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryViewController.h; sourceTree = "<group>"; };
-		D2D77593171A676700ED68C4 /* TMCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryViewController.m; sourceTree = "<group>"; };
-		D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMCategoryViewController.xib; sourceTree = "<group>"; };
 		D2D7759D171A6F2A00ED68C4 /* TMGetCategoriesCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMGetCategoriesCommand.h; sourceTree = "<group>"; };
 		D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMGetCategoriesCommand.m; sourceTree = "<group>"; };
 		D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommandProtocol.h; sourceTree = "<group>"; };
@@ -163,6 +163,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2215A1417252C42004CFCD6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D2215A1517252C76004CFCD6 /* TMCategoryViewController.h */,
+				D2215A1617252C76004CFCD6 /* TMCategoryViewController.m */,
+				D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		D2D774F11718F42200ED68C4 = {
 			isa = PBXGroup;
 			children = (
@@ -315,9 +325,7 @@
 		D2D77591171A667F00ED68C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2D77592171A676700ED68C4 /* TMCategoryViewController.h */,
-				D2D77593171A676700ED68C4 /* TMCategoryViewController.m */,
-				D2D77594171A676700ED68C4 /* TMCategoryViewController.xib */,
+				D2215A1417252C42004CFCD6 /* Categories */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -449,7 +457,7 @@
 				D2D775101718F42200ED68C4 /* Default.png in Resources */,
 				D2D775121718F42200ED68C4 /* Default@2x.png in Resources */,
 				D2D775141718F42200ED68C4 /* Default-568h@2x.png in Resources */,
-				D2D77596171A676700ED68C4 /* TMCategoryViewController.xib in Resources */,
+				D2215A1917252C76004CFCD6 /* TMCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,12 +526,12 @@
 				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
 				D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */,
 				D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */,
-				D2D77595171A676700ED68C4 /* TMCategoryViewController.m in Sources */,
 				D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */,
 				D2D775A6171A95BC00ED68C4 /* TMCategory+ViewModel.m in Sources */,
 				D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */,
 				D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */,
 				D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */,
+				D2215A1817252C76004CFCD6 /* TMCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
