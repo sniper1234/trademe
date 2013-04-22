@@ -10,6 +10,8 @@
 		07E4FEDD3372473B9E1A159F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA99F237E6D4410DAC3D2C4D /* libPods.a */; };
 		D2215A1817252C76004CFCD6 /* TMCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2215A1617252C76004CFCD6 /* TMCategoryViewController.m */; };
 		D2215A1917252C76004CFCD6 /* TMCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */; };
+		D2215A1E1725319E004CFCD6 /* TMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2215A1C1725319E004CFCD6 /* TMLandingViewController.m */; };
+		D2215A1F1725319E004CFCD6 /* TMLandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2215A1D1725319E004CFCD6 /* TMLandingViewController.xib */; };
 		D2D774FE1718F42200ED68C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FD1718F42200ED68C4 /* UIKit.framework */; };
 		D2D775001718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
 		D2D775021718F42200ED68C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775011718F42200ED68C4 /* CoreGraphics.framework */; };
@@ -84,6 +86,9 @@
 		D2215A1517252C76004CFCD6 /* TMCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCategoryViewController.h; sourceTree = "<group>"; };
 		D2215A1617252C76004CFCD6 /* TMCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCategoryViewController.m; sourceTree = "<group>"; };
 		D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMCategoryViewController.xib; sourceTree = "<group>"; };
+		D2215A1B1725319E004CFCD6 /* TMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMLandingViewController.h; sourceTree = "<group>"; };
+		D2215A1C1725319E004CFCD6 /* TMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMLandingViewController.m; sourceTree = "<group>"; };
+		D2215A1D1725319E004CFCD6 /* TMLandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMLandingViewController.xib; sourceTree = "<group>"; };
 		D2D774FA1718F42200ED68C4 /* TradeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D774FD1718F42200ED68C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2D774FF1718F42200ED68C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +176,16 @@
 				D2215A1717252C76004CFCD6 /* TMCategoryViewController.xib */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		D2215A1A17253171004CFCD6 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				D2215A1B1725319E004CFCD6 /* TMLandingViewController.h */,
+				D2215A1C1725319E004CFCD6 /* TMLandingViewController.m */,
+				D2215A1D1725319E004CFCD6 /* TMLandingViewController.xib */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		D2D774F11718F42200ED68C4 = {
@@ -325,6 +340,7 @@
 		D2D77591171A667F00ED68C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2215A1A17253171004CFCD6 /* Landing */,
 				D2215A1417252C42004CFCD6 /* Categories */,
 			);
 			path = Controllers;
@@ -458,6 +474,7 @@
 				D2D775121718F42200ED68C4 /* Default@2x.png in Resources */,
 				D2D775141718F42200ED68C4 /* Default-568h@2x.png in Resources */,
 				D2215A1917252C76004CFCD6 /* TMCategoryViewController.xib in Resources */,
+				D2215A1F1725319E004CFCD6 /* TMLandingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +549,7 @@
 				D2D775BA171AA82800ED68C4 /* TMCategoryAttributes.m in Sources */,
 				D2D775BD171AA8AD00ED68C4 /* TMCategoryAttributes+Mapping.m in Sources */,
 				D2215A1817252C76004CFCD6 /* TMCategoryViewController.m in Sources */,
+				D2215A1E1725319E004CFCD6 /* TMLandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

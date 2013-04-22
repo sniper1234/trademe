@@ -9,6 +9,7 @@
 #import "TMAppDelegate.h"
 #import <RestKit/RestKit.h>
 #import "TMCategoryViewController.h"
+#import "TMLandingViewController.h"
 
 @interface TMAppDelegate ()
 
@@ -24,6 +25,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    self.landingViewController = [[TMLandingViewController alloc] initWithNibName:@"TMLandingViewController" bundle:nil];
     self.categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
 
     [self setupNavigation];
@@ -80,7 +82,7 @@
 
 - (void)setupNavigation {
     
-    self.navController = [[UINavigationController alloc] initWithRootViewController:self.categoryViewController];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.landingViewController];
     self.navController.navigationBar.barStyle = UIBarStyleBlack;
 }
 

@@ -15,21 +15,16 @@
 
 @interface TMCategoryViewController ()
 
-@property (strong, nonatomic) TMBaseService *service;
-
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
-
-@property (strong, nonatomic) NSArray *categories;
 
 @end
 
 @implementation TMCategoryViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     if ( (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) ) {
         // Custom initialization
-        
-        self.service = [[TMBaseService alloc] init];
     }
     return self;
 }
@@ -43,22 +38,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    __weak TMCategoryViewController *weakSelf = self;
-    [self.service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]
-                                 success:^(RKMappingResult *mappingResult) {
-                                     weakSelf.categories = mappingResult.array;
-                                     [weakSelf.categoryTableView reloadData];
-                                     
-                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                 }
-                                 failure:^(NSError *error) {
-                                     NSLog(@"%@", error.localizedDescription);
-                                     
-                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                 }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,19 +81,28 @@
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    TMGetCategoryAttributesCommand *command = [[TMGetCategoryAttributesCommand alloc] init];
-    command.category = subCategory.number;
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = subCategory.number;
     
-    [self.service makeRequestWithCommand:command
-                                 success:^(RKMappingResult *mappingResult) {
-                                     NSLog(@"%@", mappingResult.array[0]);
-                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                 }
-                                 failure:^(NSError *error) {
-                                     NSLog(@"%@", error.localizedDescription);
-                                     
-                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                 }];
+    __weak TMCategoryViewController *weakSelf = self;
+    
+    TMBaseService *service = [[TMBaseService alloc] init];
+    [service makeRequestWithCommand:command
+                            success:^(RKMappingResult *mappingResult) {
+                                
+                                NSLog(@"%@", mappingResult.array[0]);
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                TMCategoryViewController *subCategoryViewController;
+                                subCategoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController"
+                                                                                                       bundle:nil];
+                                subCategoryViewController.categories = mappingResult.array; 
+                                [weakSelf.navigationController pushViewController:subCategoryViewController animated:YES];
+                            }
+                            failure:^(NSError *error) {
+                                
+                                NSLog(@"%@", error.localizedDescription);
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                            }];
 }
 
 @end

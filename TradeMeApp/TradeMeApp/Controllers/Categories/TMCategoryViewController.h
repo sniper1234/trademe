@@ -10,4 +10,6 @@
 
 @interface TMCategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSArray *categories;
+
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class TMCategoryViewController;
+@class TMLandingViewController;
 
 @interface TMAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
@@ -19,5 +20,7 @@
 @property (strong, nonatomic) UINavigationController *navController;
 
 @property (strong, nonatomic) TMCategoryViewController *categoryViewController;
+
+@property (strong, nonatomic) TMLandingViewController *landingViewController;
 
 @end
