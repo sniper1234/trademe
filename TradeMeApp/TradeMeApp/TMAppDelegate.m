@@ -7,23 +7,32 @@
 //
 
 #import "TMAppDelegate.h"
-#import "TMSecondViewController.h"
 #import <RestKit/RestKit.h>
 #import "TMCategoryViewController.h"
 
+@interface TMAppDelegate ()
+
+- (void)setupNavigation;
+
+- (void)setupTabbedNavigation;
+
+@end
+
 @implementation TMAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    TMCategoryViewController *categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
-//    UIViewController *viewController1 = [[TMFirstViewController alloc] initWithNibName:@"TMFirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[TMSecondViewController alloc] initWithNibName:@"TMSecondViewController" bundle:nil];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[categoryViewController, viewController2];
+    
+    self.categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
+
+    [self setupNavigation];
+    [self setupTabbedNavigation];
+    
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    [self.window addSubview:self.navController.view];
+    
     return YES;
 }
 
@@ -67,5 +76,19 @@
 {
 }
 */
+
+#pragma mark - TMAppDelegate ()
+
+- (void)setupNavigation {
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.categoryViewController];
+    self.navController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)setupTabbedNavigation {
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[self.categoryViewController];
+}
 
 @end

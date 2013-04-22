@@ -17,13 +17,6 @@
 		D2D775101718F42200ED68C4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D7750F1718F42200ED68C4 /* Default.png */; };
 		D2D775121718F42200ED68C4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775111718F42200ED68C4 /* Default@2x.png */; };
 		D2D775141718F42200ED68C4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775131718F42200ED68C4 /* Default-568h@2x.png */; };
-		D2D775191718F42200ED68C4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775181718F42200ED68C4 /* first.png */; };
-		D2D7751B1718F42200ED68C4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D7751A1718F42200ED68C4 /* first@2x.png */; };
-		D2D7751E1718F42200ED68C4 /* TMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7751D1718F42200ED68C4 /* TMSecondViewController.m */; };
-		D2D775201718F42200ED68C4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D7751F1718F42200ED68C4 /* second.png */; };
-		D2D775221718F42200ED68C4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D775211718F42200ED68C4 /* second@2x.png */; };
-		D2D775251718F42200ED68C4 /* TMFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D775231718F42200ED68C4 /* TMFirstViewController.xib */; };
-		D2D775281718F42200ED68C4 /* TMSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D775261718F42200ED68C4 /* TMSecondViewController.xib */; };
 		D2D775301718F42200ED68C4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7752F1718F42200ED68C4 /* SenTestingKit.framework */; };
 		D2D775311718F42200ED68C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FD1718F42200ED68C4 /* UIKit.framework */; };
 		D2D775321718F42200ED68C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D774FF1718F42200ED68C4 /* Foundation.framework */; };
@@ -101,14 +94,6 @@
 		D2D7750F1718F42200ED68C4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2D775111718F42200ED68C4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2D775131718F42200ED68C4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D2D775181718F42200ED68C4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		D2D7751A1718F42200ED68C4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		D2D7751C1718F42200ED68C4 /* TMSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMSecondViewController.h; sourceTree = "<group>"; };
-		D2D7751D1718F42200ED68C4 /* TMSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMSecondViewController.m; sourceTree = "<group>"; };
-		D2D7751F1718F42200ED68C4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		D2D775211718F42200ED68C4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		D2D775241718F42200ED68C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMFirstViewController.xib; sourceTree = "<group>"; };
-		D2D775271718F42200ED68C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMSecondViewController.xib; sourceTree = "<group>"; };
 		D2D7752E1718F42200ED68C4 /* TradeMeAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMeAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D7752F1718F42200ED68C4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D2D775371718F42200ED68C4 /* TradeMeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TradeMeAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -219,19 +204,11 @@
 		D2D775031718F42200ED68C4 /* TradeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2D7750C1718F42200ED68C4 /* TMAppDelegate.h */,
+				D2D7750D1718F42200ED68C4 /* TMAppDelegate.m */,
 				D2D77591171A667F00ED68C4 /* Controllers */,
 				D2D775801719104300ED68C4 /* Services */,
 				D2D77579171909F600ED68C4 /* Models */,
-				D2D7750C1718F42200ED68C4 /* TMAppDelegate.h */,
-				D2D7750D1718F42200ED68C4 /* TMAppDelegate.m */,
-				D2D775181718F42200ED68C4 /* first.png */,
-				D2D7751A1718F42200ED68C4 /* first@2x.png */,
-				D2D7751C1718F42200ED68C4 /* TMSecondViewController.h */,
-				D2D7751D1718F42200ED68C4 /* TMSecondViewController.m */,
-				D2D7751F1718F42200ED68C4 /* second.png */,
-				D2D775211718F42200ED68C4 /* second@2x.png */,
-				D2D775231718F42200ED68C4 /* TMFirstViewController.xib */,
-				D2D775261718F42200ED68C4 /* TMSecondViewController.xib */,
 				D2D775041718F42200ED68C4 /* Supporting Files */,
 			);
 			path = TradeMeApp;
@@ -472,12 +449,6 @@
 				D2D775101718F42200ED68C4 /* Default.png in Resources */,
 				D2D775121718F42200ED68C4 /* Default@2x.png in Resources */,
 				D2D775141718F42200ED68C4 /* Default-568h@2x.png in Resources */,
-				D2D775191718F42200ED68C4 /* first.png in Resources */,
-				D2D7751B1718F42200ED68C4 /* first@2x.png in Resources */,
-				D2D775201718F42200ED68C4 /* second.png in Resources */,
-				D2D775221718F42200ED68C4 /* second@2x.png in Resources */,
-				D2D775251718F42200ED68C4 /* TMFirstViewController.xib in Resources */,
-				D2D775281718F42200ED68C4 /* TMSecondViewController.xib in Resources */,
 				D2D77596171A676700ED68C4 /* TMCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,7 +514,6 @@
 			files = (
 				D2D7750A1718F42200ED68C4 /* main.m in Sources */,
 				D2D7750E1718F42200ED68C4 /* TMAppDelegate.m in Sources */,
-				D2D7751E1718F42200ED68C4 /* TMSecondViewController.m in Sources */,
 				D2D7757C17190A4500ED68C4 /* TMCategory.m in Sources */,
 				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
 				D2D7758C1719126A00ED68C4 /* TMCategory+Mapping.m in Sources */,
@@ -582,22 +552,6 @@
 				D2D775071718F42200ED68C4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2D775231718F42200ED68C4 /* TMFirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2D775241718F42200ED68C4 /* en */,
-			);
-			name = TMFirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		D2D775261718F42200ED68C4 /* TMSecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2D775271718F42200ED68C4 /* en */,
-			);
-			name = TMSecondViewController.xib;
 			sourceTree = "<group>";
 		};
 		D2D775381718F42200ED68C4 /* InfoPlist.strings */ = {

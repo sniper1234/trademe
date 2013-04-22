@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class TMCategoryViewController;
+
 @interface TMAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
+
+@property (strong, nonatomic) UINavigationController *navController;
+
+@property (strong, nonatomic) TMCategoryViewController *categoryViewController;
 
 @end

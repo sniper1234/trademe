@@ -97,7 +97,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // TODO Tie this in properly with the table view.
     TMCategory *category = self.categories[0];
     TMCategory *subCategory = category.subcategories[indexPath.row];
 
