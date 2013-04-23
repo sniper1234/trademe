@@ -32,6 +32,11 @@
 @property (nonatomic) BOOL withCounts;
 
 /**
+ * Get the "root" category.
+ */
++ (TMGetCategoriesCommand *)rootCategory;
+
+/**
  * Get the motors category.
  */
 + (TMGetCategoriesCommand *)motorsCategory;

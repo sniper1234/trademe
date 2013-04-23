@@ -20,6 +20,22 @@ static NSString *format = @"json";
 
 @implementation TMGetCategoriesCommand
 
+- (id)init {
+    if ( (self = [super init]) ) {
+        _depth = @2;
+    }
+    
+    return self;
+}
+
++ (TMGetCategoriesCommand *)rootCategory {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    command.number = nil;
+    
+    return command;
+}
+
 + (TMGetCategoriesCommand *)motorsCategory {
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
