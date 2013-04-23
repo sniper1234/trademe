@@ -12,6 +12,7 @@
 #import "TMGetCategoryAttributesCommand.h"
 #import "TMBaseService.h"
 #import "MBProgressHUD.h"
+#import "TMCategory.h"
 
 @interface TMCategoryViewController ()
 
@@ -33,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = NSLocalizedString(@"Categories", @"Categories");
+    self.title = self.rootCategory.name;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.categories.count;
+    return self.rootCategory.subcategories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,7 +63,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 	}
     
-    TMCategory *category = self.categories[indexPath.row];
+    TMCategory *category = self.rootCategory.subcategories[indexPath.row];
     
     cell.textLabel.text = category.displayTitle;
     cell.detailTextLabel.text = category.number;
@@ -71,7 +72,7 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     else {
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     return cell;
@@ -83,7 +84,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    TMCategory *category = self.categories[indexPath.row];
+    TMCategory *category = self.rootCategory.subcategories[indexPath.row];
     
     if (category.subcategories.count == 0) {
         return;
@@ -102,15 +103,14 @@
                                 
                                 TMCategory *category = mappingResult.firstObject;
                                 
-                                NSLog(@"%@", mappingResult.array[0]);
-                                [MBProgressHUD hideHUDForView:self.view animated:YES];
                                 TMCategoryViewController *subCategoryViewController;
                                 subCategoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController"
                                                                                                        bundle:nil];
+                                subCategoryViewController.rootCategory = category;
                                 
-                                
-                                subCategoryViewController.categories = category.subcategories;
                                 [weakSelf.navigationController pushViewController:subCategoryViewController animated:YES];
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+
                             }
                             failure:^(NSError *error) {
                                 
@@ -121,7 +121,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     
-    TMCategory *category = self.categories[indexPath.row];
+//    TMCategory *category = self.categories[indexPath.row];
 }
 
 @end

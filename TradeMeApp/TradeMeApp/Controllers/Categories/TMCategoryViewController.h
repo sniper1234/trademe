@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class TMCategory;
+
 @interface TMCategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) TMCategory *rootCategory;
 
 @end

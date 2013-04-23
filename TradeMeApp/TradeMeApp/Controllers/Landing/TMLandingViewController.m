@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"Home";
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +46,7 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    __weak TMLandingViewController *weakSelf = self;
+//    __weak TMLandingViewController *weakSelf = self;
     
     TMBaseService *service = [[TMBaseService alloc] init];
     
@@ -55,7 +57,8 @@
 
                                 TMCategoryViewController *categoryViewController;
                                 categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
-                                categoryViewController.categories = category.subcategories;
+                                categoryViewController.rootCategory = category;
+//                                categoryViewController.categories = category.subcategories;
                                 
                                 [self.navigationController pushViewController:categoryViewController animated:YES];
                                 
