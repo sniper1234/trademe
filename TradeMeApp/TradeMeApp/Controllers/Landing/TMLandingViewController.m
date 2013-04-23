@@ -11,6 +11,7 @@
 #import "TMGetCategoriesCommand.h"
 #import "MBProgressHUD.h"
 #import "TMBaseService.h"
+#import "TMModels.h"
 
 @interface TMLandingViewController ()
 
@@ -47,12 +48,14 @@
     
     TMBaseService *service = [[TMBaseService alloc] init];
     
-    [service makeRequestWithCommand:[TMGetCategoriesCommand booksCategory]
+    [service makeRequestWithCommand:[TMGetCategoriesCommand rootCategory]
                             success:^(RKMappingResult *mappingResult) {
+                                
+                                TMCategory *category = mappingResult.firstObject;
 
                                 TMCategoryViewController *categoryViewController;
                                 categoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController" bundle:nil];
-                                categoryViewController.categories = mappingResult.array;
+                                categoryViewController.categories = category.subcategories;
                                 
                                 [self.navigationController pushViewController:categoryViewController animated:YES];
                                 
