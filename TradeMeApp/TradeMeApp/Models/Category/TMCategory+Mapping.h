@@ -13,7 +13,7 @@
 @interface TMCategory (Mapping)
 
 /**
- * The REstKit mapping.
+ * The RestKit mapping.
  */
 + (RKMapping *)mapping;
 

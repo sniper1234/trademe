@@ -8,15 +8,17 @@
 
 #import "TMCategoryViewController.h"
 #import "TMModels.h"
-#import "TMGetCategoriesCommand.h"
-#import "TMGetCategoryAttributesCommand.h"
+#import "TMCommands.h"
 #import "TMBaseService.h"
 #import "MBProgressHUD.h"
-#import "TMCategory.h"
+#import "TMListingsViewController.h"
 
 @interface TMCategoryViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
+
+- (void)didSelectForCategories:(TMCategory *)category;
+- (void)didSelectForListings:(TMCategory *)category;
 
 @end
 
@@ -87,8 +89,21 @@
     TMCategory *category = self.rootCategory.subcategories[indexPath.row];
     
     if (category.subcategories.count == 0) {
-        return;
+        [self didSelectForListings:category];
     }
+    else if (category.subcategories.count > 0) {
+        [self didSelectForCategories:category];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
+//    TMCategory *category = self.categories[indexPath.row];
+}   
+
+#pragma mark - TMCategoryViewController ()
+
+- (void)didSelectForCategories:(TMCategory *)category {
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
     command.number = category.number;
@@ -96,7 +111,7 @@
     __weak TMCategoryViewController *weakSelf = self;
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
+    
     TMBaseService *service = [[TMBaseService alloc] init];
     [service makeRequestWithCommand:command
                             success:^(RKMappingResult *mappingResult) {
@@ -110,7 +125,7 @@
                                 
                                 [weakSelf.navigationController pushViewController:subCategoryViewController animated:YES];
                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
-
+                                
                             }
                             failure:^(NSError *error) {
                                 
@@ -119,9 +134,32 @@
                             }];
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (void)didSelectForListings:(TMCategory *)category {
     
-//    TMCategory *category = self.categories[indexPath.row];
+    TMGetGeneralSearchCommand *command = [[TMGetGeneralSearchCommand alloc] init];
+    command.category = category.number;
+    
+    __weak TMCategoryViewController *weakSelf = self;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    TMBaseService *service = [[TMBaseService alloc] init];
+    [service makeRequestWithCommand:command
+                            success:^(RKMappingResult *mappingResult) {
+                                
+                                TMListings *listings = mappingResult.firstObject;
+                                TMListingsViewController *listingsViewController;
+                                listingsViewController = [[TMListingsViewController alloc] init];
+                                listingsViewController.listings = listings;
+                                
+                                [weakSelf.navigationController pushViewController:listingsViewController animated:YES];
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                            }
+                            failure:^(NSError *error) {
+                                
+                                NSLog(@"%@", error.localizedDescription);
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                            }];
 }
 
 @end
