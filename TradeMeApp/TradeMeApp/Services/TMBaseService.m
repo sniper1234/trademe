@@ -8,7 +8,6 @@
 
 #import "TMBaseService.h"
 #import <RestKit/RestKit.h>
-#import "NSDictionary+UrlEncode.h"
 #import "TMCommandProtocol.h"
 
 @interface TMBaseService ()

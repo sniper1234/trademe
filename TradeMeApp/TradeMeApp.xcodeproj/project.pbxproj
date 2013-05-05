@@ -33,7 +33,6 @@
 		D2D77576171905E000ED68C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D7756B1719058400ED68C4 /* CoreData.framework */; };
 		D2D77577171905EC00ED68C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D775691719056F00ED68C4 /* CFNetwork.framework */; };
 		D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775821719106E00ED68C4 /* TMBaseService.m */; };
-		D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */; };
 		D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */; };
 		D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D775B6171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m */; };
 		D2EB8A0117336FF700058B34 /* TMGetGeneralSearchCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB8A0017336FF700058B34 /* TMGetGeneralSearchCommand.m */; };
@@ -49,6 +48,9 @@
 		D2EB8A2517337C1F00058B34 /* TMListings+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB8A2417337C1F00058B34 /* TMListings+Mapping.m */; };
 		D2EB8A2A17337E6400058B34 /* TMListingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB8A2817337E6400058B34 /* TMListingsViewController.m */; };
 		D2EB8A2B17337E6400058B34 /* TMListingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EB8A2917337E6400058B34 /* TMListingsViewController.xib */; };
+		D2FBF0D31735C8C3007CF3FE /* TMCommandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0D21735C8C3007CF3FE /* TMCommandTests.m */; };
+		D2FBF0DB1735CDE3007CF3FE /* TMQueryStringParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0DA1735CDE3007CF3FE /* TMQueryStringParameter.m */; };
+		D2FBF0DE1735CEF6007CF3FE /* TMQueryStringParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0DD1735CEF6007CF3FE /* TMQueryStringParameters.m */; };
 		D2FE4A221734CFB4009D36BA /* TMStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FE4A211734CFB4009D36BA /* TMStyles.m */; };
 /* End PBXBuildFile section */
 
@@ -126,8 +128,6 @@
 		D2D7757D17190B4800ED68C4 /* TMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMModels.h; sourceTree = "<group>"; };
 		D2D775811719106E00ED68C4 /* TMBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBaseService.h; sourceTree = "<group>"; };
 		D2D775821719106E00ED68C4 /* TMBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBaseService.m; sourceTree = "<group>"; };
-		D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UrlEncode.h"; sourceTree = "<group>"; };
-		D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+UrlEncode.m"; sourceTree = "<group>"; };
 		D2D7759D171A6F2A00ED68C4 /* TMGetCategoriesCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMGetCategoriesCommand.h; sourceTree = "<group>"; };
 		D2D7759E171A6F2A00ED68C4 /* TMGetCategoriesCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMGetCategoriesCommand.m; sourceTree = "<group>"; };
 		D2D775A0171A6F3E00ED68C4 /* TMCommandProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommandProtocol.h; sourceTree = "<group>"; };
@@ -159,6 +159,11 @@
 		D2EB8A2817337E6400058B34 /* TMListingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMListingsViewController.m; sourceTree = "<group>"; };
 		D2EB8A2917337E6400058B34 /* TMListingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMListingsViewController.xib; sourceTree = "<group>"; };
 		D2EB8A2C17337F8400058B34 /* TMCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCommands.h; sourceTree = "<group>"; };
+		D2FBF0D21735C8C3007CF3FE /* TMCommandTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCommandTests.m; sourceTree = "<group>"; };
+		D2FBF0D91735CDE3007CF3FE /* TMQueryStringParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQueryStringParameter.h; sourceTree = "<group>"; };
+		D2FBF0DA1735CDE3007CF3FE /* TMQueryStringParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMQueryStringParameter.m; sourceTree = "<group>"; };
+		D2FBF0DC1735CEF6007CF3FE /* TMQueryStringParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQueryStringParameters.h; sourceTree = "<group>"; };
+		D2FBF0DD1735CEF6007CF3FE /* TMQueryStringParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMQueryStringParameters.m; sourceTree = "<group>"; };
 		D2FE4A201734CFB4009D36BA /* TMStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMStyles.h; sourceTree = "<group>"; };
 		D2FE4A211734CFB4009D36BA /* TMStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMStyles.m; sourceTree = "<group>"; };
 		DA99F237E6D4410DAC3D2C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +290,7 @@
 			children = (
 				D2D7753B1718F42200ED68C4 /* TradeMeAppTests.h */,
 				D2D7753C1718F42200ED68C4 /* TradeMeAppTests.m */,
+				D2FBF0D21735C8C3007CF3FE /* TMCommandTests.m */,
 				D2D775361718F42200ED68C4 /* Supporting Files */,
 			);
 			path = TradeMeAppTests;
@@ -350,8 +356,10 @@
 		D2D7758D171A607E00ED68C4 /* TrustyFrog */ = {
 			isa = PBXGroup;
 			children = (
-				D2D7758E171A60F600ED68C4 /* NSDictionary+UrlEncode.h */,
-				D2D7758F171A60F600ED68C4 /* NSDictionary+UrlEncode.m */,
+				D2FBF0D91735CDE3007CF3FE /* TMQueryStringParameter.h */,
+				D2FBF0DA1735CDE3007CF3FE /* TMQueryStringParameter.m */,
+				D2FBF0DC1735CEF6007CF3FE /* TMQueryStringParameters.h */,
+				D2FBF0DD1735CEF6007CF3FE /* TMQueryStringParameters.m */,
 			);
 			path = TrustyFrog;
 			sourceTree = "<group>";
@@ -610,7 +618,6 @@
 				D2D7750A1718F42200ED68C4 /* main.m in Sources */,
 				D2D7750E1718F42200ED68C4 /* TMAppDelegate.m in Sources */,
 				D2D775831719106E00ED68C4 /* TMBaseService.m in Sources */,
-				D2D77590171A60F600ED68C4 /* NSDictionary+UrlEncode.m in Sources */,
 				D2D7759F171A6F2A00ED68C4 /* TMGetCategoriesCommand.m in Sources */,
 				D2D775B7171AA6E200ED68C4 /* TMGetCategoryAttributesCommand.m in Sources */,
 				D2215A1817252C76004CFCD6 /* TMCategoryViewController.m in Sources */,
@@ -628,6 +635,8 @@
 				D2EB8A2517337C1F00058B34 /* TMListings+Mapping.m in Sources */,
 				D2EB8A2A17337E6400058B34 /* TMListingsViewController.m in Sources */,
 				D2FE4A221734CFB4009D36BA /* TMStyles.m in Sources */,
+				D2FBF0DB1735CDE3007CF3FE /* TMQueryStringParameter.m in Sources */,
+				D2FBF0DE1735CEF6007CF3FE /* TMQueryStringParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2D7753D1718F42200ED68C4 /* TradeMeAppTests.m in Sources */,
+				D2FBF0D31735C8C3007CF3FE /* TMCommandTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

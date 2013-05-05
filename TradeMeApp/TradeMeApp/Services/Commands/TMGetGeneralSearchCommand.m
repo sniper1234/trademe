@@ -9,7 +9,7 @@
 #import "TMGetGeneralSearchCommand.h"
 #import "TMListings.h"
 #import "TMListings+Mapping.h"
-#import "NSDictionary+UrlEncode.h"
+#import "TMQueryStringParameters.h"
 #import <RestKit/RestKit.h>
 
 static NSString *format = @"json";
@@ -41,13 +41,13 @@ static NSString *format = @"json";
 - (NSURLRequest *)requestForRootPath:(NSString *)rootPath {
     
     NSString *path = @"v1/Search/General";
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    TMQueryStringParameters *params = [[TMQueryStringParameters alloc] init];
     
     if (self.category) {
-        [parameters setValue:self.category forKey:@"category"];
+        [params addParameterWithName:@"category" value:self.category];
     }
     
-    NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, parameters.toQueryStringParameters];
+    NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, params.urlPairs];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
     
     return request;

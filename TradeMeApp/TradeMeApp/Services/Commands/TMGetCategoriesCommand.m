@@ -9,7 +9,7 @@
 #import "TMGetCategoriesCommand.h"
 #import "TMCategory.h"
 #import "TMCategory+Mapping.h"
-#import "NSDictionary+UrlEncode.h"
+#import "TMQueryStringParameters.h"
 #import <RestKit/RestKit.h>
 
 static NSString *format = @"json";
@@ -83,7 +83,7 @@ static NSString *format = @"json";
 - (NSURLRequest *)requestForRootPath:(NSString *)rootPath {
     
     NSString *path;
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    TMQueryStringParameters *params = [[TMQueryStringParameters alloc] init];
     
     if (self.number) {
         path = [NSString stringWithFormat:@"v1/Categories/%@", self.number];
@@ -93,18 +93,18 @@ static NSString *format = @"json";
     }
     
     if (self.depth) {
-        [parameters setValue:self.depth forKey:@"depth"];
+        [params addParameterWithName:@"depth" value:self.depth];
     }
     
     if (self.region) {
-        [parameters setValue:self.region forKey:@"region"];
+        [params addParameterWithName:@"region" value:self.region];
     }
     
     if (self.withCounts) {
-        [parameters setValue:@"true" forKey:@"with_counts"];
+        [params addParameterWithName:@"with_counts" value:@"true"];
     }
     
-    NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, [parameters toQueryStringParameters]];
+    NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, params.urlPairs];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
     
     return request;
