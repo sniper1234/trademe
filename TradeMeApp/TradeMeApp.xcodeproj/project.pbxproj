@@ -51,6 +51,8 @@
 		D2FBF0D31735C8C3007CF3FE /* TMCommandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0D21735C8C3007CF3FE /* TMCommandTests.m */; };
 		D2FBF0DB1735CDE3007CF3FE /* TMQueryStringParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0DA1735CDE3007CF3FE /* TMQueryStringParameter.m */; };
 		D2FBF0DE1735CEF6007CF3FE /* TMQueryStringParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0DD1735CEF6007CF3FE /* TMQueryStringParameters.m */; };
+		D2FBF0EB173608C9007CF3FE /* TMListingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FBF0E9173608C9007CF3FE /* TMListingDetailsViewController.m */; };
+		D2FBF0EC173608C9007CF3FE /* TMListingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBF0EA173608C9007CF3FE /* TMListingDetailsViewController.xib */; };
 		D2FE4A221734CFB4009D36BA /* TMStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FE4A211734CFB4009D36BA /* TMStyles.m */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +166,9 @@
 		D2FBF0DA1735CDE3007CF3FE /* TMQueryStringParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMQueryStringParameter.m; sourceTree = "<group>"; };
 		D2FBF0DC1735CEF6007CF3FE /* TMQueryStringParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQueryStringParameters.h; sourceTree = "<group>"; };
 		D2FBF0DD1735CEF6007CF3FE /* TMQueryStringParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMQueryStringParameters.m; sourceTree = "<group>"; };
+		D2FBF0E8173608C9007CF3FE /* TMListingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMListingDetailsViewController.h; sourceTree = "<group>"; };
+		D2FBF0E9173608C9007CF3FE /* TMListingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMListingDetailsViewController.m; sourceTree = "<group>"; };
+		D2FBF0EA173608C9007CF3FE /* TMListingDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMListingDetailsViewController.xib; sourceTree = "<group>"; };
 		D2FE4A201734CFB4009D36BA /* TMStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMStyles.h; sourceTree = "<group>"; };
 		D2FE4A211734CFB4009D36BA /* TMStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMStyles.m; sourceTree = "<group>"; };
 		DA99F237E6D4410DAC3D2C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,9 +423,9 @@
 				D2EB8A1A1733720900058B34 /* TMListing+Mapping.h */,
 				D2EB8A1B1733720900058B34 /* TMListing+Mapping.m */,
 				D2EB8A1D1733721900058B34 /* TMListing+ViewModel.h */,
-				D2EB8A1E1733721900058B34 /* TMListing+ViewModel.m */,
 				D2EB8A2317337C1F00058B34 /* TMListings+Mapping.h */,
 				D2EB8A2417337C1F00058B34 /* TMListings+Mapping.m */,
+				D2EB8A1E1733721900058B34 /* TMListing+ViewModel.m */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -431,6 +436,9 @@
 				D2EB8A2717337E6400058B34 /* TMListingsViewController.h */,
 				D2EB8A2817337E6400058B34 /* TMListingsViewController.m */,
 				D2EB8A2917337E6400058B34 /* TMListingsViewController.xib */,
+				D2FBF0E8173608C9007CF3FE /* TMListingDetailsViewController.h */,
+				D2FBF0E9173608C9007CF3FE /* TMListingDetailsViewController.m */,
+				D2FBF0EA173608C9007CF3FE /* TMListingDetailsViewController.xib */,
 			);
 			path = Listings;
 			sourceTree = "<group>";
@@ -553,6 +561,7 @@
 				D2215A1917252C76004CFCD6 /* TMCategoryViewController.xib in Resources */,
 				D2215A1F1725319E004CFCD6 /* TMLandingViewController.xib in Resources */,
 				D2EB8A2B17337E6400058B34 /* TMListingsViewController.xib in Resources */,
+				D2FBF0EC173608C9007CF3FE /* TMListingDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +646,7 @@
 				D2FE4A221734CFB4009D36BA /* TMStyles.m in Sources */,
 				D2FBF0DB1735CDE3007CF3FE /* TMQueryStringParameter.m in Sources */,
 				D2FBF0DE1735CEF6007CF3FE /* TMQueryStringParameters.m in Sources */,
+				D2FBF0EB173608C9007CF3FE /* TMListingDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

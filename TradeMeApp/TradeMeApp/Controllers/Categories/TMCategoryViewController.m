@@ -100,10 +100,7 @@
         });
     }
     else if (category.subcategories.count > 0) {
-        dispatch_queue_t backgroundQueue = dispatch_queue_create("trademeapp.background_queue", NULL);
-        dispatch_async(backgroundQueue, ^{
-            [self didSelectForCategories:category];
-        });
+        [self didSelectForCategories:category];
     }
 }
 
@@ -111,32 +108,13 @@
 
 - (void)didSelectForCategories:(TMCategory *)category {
     
-    self.hud.labelText = @"Loading...";
-    [self.hud show:YES];
-    
-    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
-    command.number = category.number;
-    
-    __weak TMCategoryViewController *weakSelf = self;
-    
-    TMBaseService *service = [[TMBaseService alloc] init];
-    [service makeRequestWithCommand:command
-                            success:^(RKMappingResult *mappingResult) {
-                                
-                                TMCategory *category = mappingResult.firstObject;
-                                TMCategoryViewController *subCategoryViewController;
-                                subCategoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController"
-                                                                                                       bundle:nil];
-                                subCategoryViewController.rootCategory = category;
+    TMCategoryViewController *subCategoryViewController;
+    subCategoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController"
+                                                                           bundle:nil];
+    subCategoryViewController.rootCategory = category;
 
-                                [weakSelf.navigationController pushViewController:subCategoryViewController animated:YES];
-                                [self.hud hide:YES afterDelay:0.6];
-                            }
-                            failure:^(NSError *error) {
-                                
-                                NSLog(@"%@", error.localizedDescription);
-                                [self.hud hide:YES afterDelay:0.6];
-                            }];
+    [self.navigationController pushViewController:subCategoryViewController
+                                         animated:YES];
 }
 
 - (void)didSelectForListings:(TMCategory *)category {

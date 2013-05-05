@@ -32,6 +32,11 @@
 @property (nonatomic) BOOL withCounts;
 
 /**
+ * Get everythig.
+ */
++ (TMGetCategoriesCommand *)allCategories;
+
+/**
  * Get the "root" category.
  */
 + (TMGetCategoriesCommand *)rootCategory;

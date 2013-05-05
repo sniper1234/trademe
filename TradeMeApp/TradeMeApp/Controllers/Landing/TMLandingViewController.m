@@ -75,7 +75,7 @@
     
     TMBaseService *service = [[TMBaseService alloc] init];
     
-    [service makeRequestWithCommand:[TMGetCategoriesCommand rootCategory]
+    [service makeRequestWithCommand:[TMGetCategoriesCommand allCategories]
                             success:^(RKMappingResult *mappingResult) {
                                 
                                 TMCategory *category = mappingResult.firstObject;

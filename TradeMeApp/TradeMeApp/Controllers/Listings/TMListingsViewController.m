@@ -11,6 +11,7 @@
 #import "TMCommands.h"
 #import "TMModels.h"
 #import "MBProgressHUD.h"
+#import "TMListingDetailsViewController.h"
 
 @interface TMListingsViewController ()
 
@@ -73,5 +74,19 @@
 
 #pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TMListingDetailsViewController *detailsViewController;
+    detailsViewController = [[TMListingDetailsViewController alloc] initWithNibName:@"TMListingDetailsViewController"
+                                                                             bundle:nil];
+    detailsViewController.listing = self.listings.list[indexPath.row];
+    
+    [self presentViewController:detailsViewController
+                       animated:YES
+                     completion:^{
+                     }];
+}
 
 @end

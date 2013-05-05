@@ -28,10 +28,18 @@ static NSString *format = @"json";
     return self;
 }
 
++ (TMGetCategoriesCommand *)allCategories {
+    
+    TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
+    
+    return command;
+}
+
 + (TMGetCategoriesCommand *)rootCategory {
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
     command.number = nil;
+    command.depth = @0;
     
     return command;
 }
