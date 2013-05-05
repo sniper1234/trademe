@@ -16,4 +16,9 @@
  */
 @property (strong, nonatomic) NSString *category;
 
+/**
+ * One or more keywords to use in a search query.
+ */
+@property (strong, nonatomic) NSString *searchString;
+
 @end

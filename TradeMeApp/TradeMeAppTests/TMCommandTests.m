@@ -48,4 +48,17 @@
     STAssertTrue([expectedURL isEqualToString:actualURL], @"Expected URL does not match. Actual: %@", actualURL);
 }
 
+- (void)testGeneralSearchForBixaInSciFiBooksRequestPath {
+    
+    
+    TMGetGeneralSearchCommand *command = [[TMGetGeneralSearchCommand alloc] init];
+    command.category = @"0193-0463-0194-";
+    command.searchString = @"bixa";
+    
+    NSString *actualURL = [command requestForRootPath:@"https://api.tmsandbox.co.nz/"].URL.absoluteString;
+    NSString *expectedURL = @"https://api.tmsandbox.co.nz/v1/Search/General.json?category=0193-0463-0194-&search_string=bixa";
+    
+    STAssertTrue([expectedURL isEqualToString:actualURL], @"Expected URL does not match. Actual: %@", actualURL);
+}
+
 @end

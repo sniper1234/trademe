@@ -47,6 +47,10 @@ static NSString *format = @"json";
         [params addParameterWithName:@"category" value:self.category];
     }
     
+    if (self.searchString) {
+        [params addParameterWithName:@"search_string" value:self.searchString];
+    }
+    
     NSString *fullPath = [NSString stringWithFormat:@"%@%@.%@%@", rootPath, path, format, params.urlPairs];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullPath]];
     
