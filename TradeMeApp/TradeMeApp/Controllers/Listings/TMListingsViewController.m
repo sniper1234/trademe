@@ -8,7 +8,7 @@
 
 #import "TMListingsViewController.h"
 #import "TMBaseService.h"
-#import "TMGetGeneralSearchCommand.h"
+#import "TMCommands.h"
 #import "TMModels.h"
 #import "MBProgressHUD.h"
 

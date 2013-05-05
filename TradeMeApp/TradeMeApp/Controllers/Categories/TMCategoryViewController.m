@@ -20,6 +20,8 @@
 - (void)didSelectForCategories:(TMCategory *)category;
 - (void)didSelectForListings:(TMCategory *)category;
 
+@property (strong, nonatomic) MBProgressHUD *hud;
+
 @end
 
 @implementation TMCategoryViewController
@@ -37,6 +39,10 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = self.rootCategory.name;
+    
+    self.hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    self.hud.labelText = @"Loading...";
+    [self.navigationController.view addSubview:self.hud];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -89,59 +95,58 @@
     TMCategory *category = self.rootCategory.subcategories[indexPath.row];
     
     if (category.subcategories.count == 0) {
-        [self didSelectForListings:category];
+        dispatch_queue_t backgroundQueue = dispatch_queue_create("trademeapp.background_queue", NULL);
+        dispatch_async(backgroundQueue, ^{
+            [self didSelectForListings:category];
+        });
     }
     else if (category.subcategories.count > 0) {
-        [self didSelectForCategories:category];
+        dispatch_queue_t backgroundQueue = dispatch_queue_create("trademeapp.background_queue", NULL);
+        dispatch_async(backgroundQueue, ^{
+            [self didSelectForCategories:category];
+        });
     }
 }
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-//    TMCategory *category = self.categories[indexPath.row];
-}   
 
 #pragma mark - TMCategoryViewController ()
 
 - (void)didSelectForCategories:(TMCategory *)category {
+    
+    [self.hud show:YES];
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
     command.number = category.number;
     
     __weak TMCategoryViewController *weakSelf = self;
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     TMBaseService *service = [[TMBaseService alloc] init];
     [service makeRequestWithCommand:command
                             success:^(RKMappingResult *mappingResult) {
                                 
                                 TMCategory *category = mappingResult.firstObject;
-                                
                                 TMCategoryViewController *subCategoryViewController;
                                 subCategoryViewController = [[TMCategoryViewController alloc] initWithNibName:@"TMCategoryViewController"
                                                                                                        bundle:nil];
                                 subCategoryViewController.rootCategory = category;
-                                
+
                                 [weakSelf.navigationController pushViewController:subCategoryViewController animated:YES];
-                                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                
+                                [self.hud hide:YES afterDelay:0.6];
                             }
                             failure:^(NSError *error) {
                                 
                                 NSLog(@"%@", error.localizedDescription);
-                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                [self.hud hide:YES afterDelay:0.6];
                             }];
 }
 
 - (void)didSelectForListings:(TMCategory *)category {
     
+    [self.hud show:YES];
+    
     TMGetGeneralSearchCommand *command = [[TMGetGeneralSearchCommand alloc] init];
     command.category = category.number;
     
     __weak TMCategoryViewController *weakSelf = self;
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     TMBaseService *service = [[TMBaseService alloc] init];
     [service makeRequestWithCommand:command
@@ -153,12 +158,12 @@
                                 listingsViewController.listings = listings;
                                 
                                 [weakSelf.navigationController pushViewController:listingsViewController animated:YES];
-                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                [self.hud hide:YES afterDelay:0.6];
                             }
                             failure:^(NSError *error) {
                                 
                                 NSLog(@"%@", error.localizedDescription);
-                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                [self.hud hide:YES afterDelay:0.6];
                             }];
 }
 
