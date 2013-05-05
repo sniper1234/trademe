@@ -53,10 +53,10 @@
     
     TMGetGeneralSearchCommand *command = [[TMGetGeneralSearchCommand alloc] init];
     command.category = @"0193-0463-0194-";
-    command.searchString = @"bixa";
+    command.searchString = @"bixa product";
     
     NSString *actualURL = [command requestForRootPath:@"https://api.tmsandbox.co.nz/"].URL.absoluteString;
-    NSString *expectedURL = @"https://api.tmsandbox.co.nz/v1/Search/General.json?category=0193-0463-0194-&search_string=bixa";
+    NSString *expectedURL = @"https://api.tmsandbox.co.nz/v1/Search/General.json?category=0193-0463-0194-&search_string=bixa%20product";
     
     STAssertTrue([expectedURL isEqualToString:actualURL], @"Expected URL does not match. Actual: %@", actualURL);
 }

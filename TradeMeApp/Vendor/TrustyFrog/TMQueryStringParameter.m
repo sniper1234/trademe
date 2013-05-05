@@ -8,6 +8,12 @@
 
 #import "TMQueryStringParameter.h"
 
+@interface TMQueryStringParameter ()
+
+- (NSString *)encodedString:(NSString *)string;
+
+@end
+
 @implementation TMQueryStringParameter
 
 - (id)initWithName:(NSString *)name value:(id)value {
@@ -23,12 +29,32 @@
 
 - (NSString *)urlPair {
 
-    return [NSString stringWithFormat:@"%@=%@", self.name, self.value]; // TODO URL encode.
+    return [NSString stringWithFormat:@"%@=%@", self.name, [self encodedString:self.value]];
 }
 
 - (NSString *)debugDescription {
     
     return [NSString stringWithFormat:@"QueryStringParameter [%@] [%@]", self.name, self.value];
+}
+
+#pragma mark - TMQueryStringParameter ()
+
+- (NSString *)encodedString:(id)value {
+    
+    if (![value isKindOfClass:[NSString class]]) {
+        return [NSString stringWithFormat:@"%@", value];
+    }
+    
+    NSString *escapedString;
+    escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+        NULL,
+        (__bridge CFStringRef)value,
+        NULL,
+        (__bridge CFStringRef)@" +=!*'();:@&$,/?%#[]",
+        kCFStringEncodingUTF8)
+    );
+    
+    return escapedString;
 }
 
 @end
