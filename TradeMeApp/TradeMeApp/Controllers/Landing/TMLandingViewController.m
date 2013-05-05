@@ -47,7 +47,6 @@
     self.title = @"Home";
     
     self.hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    self.hud.labelText = @"Loading...";
     [self.navigationController.view addSubview:self.hud];
 }
 
@@ -63,13 +62,13 @@
     
     dispatch_queue_t backgroundQueue = dispatch_queue_create("trademeapp.background_queue", NULL);
     dispatch_async(backgroundQueue, ^{
-        [self resignFirstResponder];
         [self browseCategories];
     });
 }
 
 - (void)browseCategories {
 
+    self.hud.labelText = @"Loading...";
     [self.hud show:YES];
     
     __weak TMLandingViewController *weakSelf = self;
@@ -106,6 +105,7 @@
 
 - (void)search {
 
+    self.hud.labelText = @"Loading...";
     [self.hud show:YES];
     
     __weak TMLandingViewController *weakSelf = self;

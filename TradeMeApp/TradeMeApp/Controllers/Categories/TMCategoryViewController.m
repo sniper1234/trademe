@@ -41,7 +41,6 @@
     self.title = self.rootCategory.name;
     
     self.hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    self.hud.labelText = @"Loading...";
     [self.navigationController.view addSubview:self.hud];
 }
 
@@ -112,6 +111,7 @@
 
 - (void)didSelectForCategories:(TMCategory *)category {
     
+    self.hud.labelText = @"Loading...";
     [self.hud show:YES];
     
     TMGetCategoriesCommand *command = [[TMGetCategoriesCommand alloc] init];
@@ -141,6 +141,7 @@
 
 - (void)didSelectForListings:(TMCategory *)category {
     
+    self.hud.labelText = @"Loading...";
     [self.hud show:YES];
     
     TMGetGeneralSearchCommand *command = [[TMGetGeneralSearchCommand alloc] init];
